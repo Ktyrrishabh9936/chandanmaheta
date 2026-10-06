@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Chandan Mehta Wellbeing"
+description = "A warm, image-led wellbeing website introducing Chandan Mehta’s work with individuals, organisations, hospitality spaces and communities, with future-ready links for The Approach and a blog."
+version = "1.0.0"
+id = "artifacts/chandan-mehta-wellbeing"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25658
+
+[services.development]
+run = "pnpm --filter @workspace/chandan-mehta-wellbeing run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/chandan-mehta-wellbeing", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/chandan-mehta-wellbeing/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25658"
+BASE_PATH = "/"

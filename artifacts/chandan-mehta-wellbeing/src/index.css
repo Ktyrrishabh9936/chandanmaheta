@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 42 37% 97%;
+  --foreground: 22 31% 24%;
+  --border: 36 24% 86%;
+  --card: 42 37% 97%;
+  --card-foreground: 22 31% 24%;
+  --popover: 42 37% 97%;
+  --popover-foreground: 22 31% 24%;
+  --primary: 43 82% 57%;
+  --primary-foreground: 22 31% 24%;
+  --secondary: 163 24% 87%;
+  --secondary-foreground: 22 31% 24%;
+  --muted: 42 22% 92%;
+  --muted-foreground: 24 14% 48%;
+  --accent: 8 53% 83%;
+  --accent-foreground: 22 31% 24%;
+  --destructive: 2 59% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 36 24% 82%;
+  --ring: 43 82% 57%;
+  --chart-1: 43 82% 57%;
+  --chart-2: 163 24% 58%;
+  --chart-3: 8 53% 69%;
+  --chart-4: 22 31% 40%;
+  --chart-5: 65 27% 71%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-serif: 'Instrument Serif', serif;
+  --app-font-mono: 'DM Sans', sans-serif;
+  --radius: .75rem;
+  --paper: #f8f6ef;
+  --white: #fffefa;
+  --ink: #503a2e;
+  --muted-ink: #78685d;
+  --mustard: #ecb538;
+  --sage: #dce9df;
+  --rose: #f4d7d1;
+  --sky: #dce9ec;
+  --line: #e8e1d5;
+}
+.dark {
+  --background: 24 20% 13%;
+  --foreground: 42 37% 97%;
+  --border: 24 16% 28%;
+  --card: 24 20% 16%;
+  --card-foreground: 42 37% 97%;
+  --popover: 24 20% 16%;
+  --popover-foreground: 42 37% 97%;
+  --primary: 43 82% 57%;
+  --primary-foreground: 22 31% 24%;
+  --secondary: 163 24% 34%;
+  --secondary-foreground: 42 37% 97%;
+  --muted: 24 16% 22%;
+  --muted-foreground: 36 18% 70%;
+  --accent: 8 53% 54%;
+  --accent-foreground: 42 37% 97%;
+  --destructive: 2 59% 51%;
+  --destructive-foreground: 42 37% 97%;
+  --input: 24 16% 28%;
+  --ring: 43 82% 57%;
+  --chart-1: 43 82% 57%;
+  --chart-2: 163 24% 58%;
+  --chart-3: 8 53% 69%;
+  --chart-4: 22 31% 66%;
+  --chart-5: 65 27% 71%;
+}
+@layer base {
+  * { @apply border-border; }
+  body { @apply font-sans antialiased bg-background text-foreground; }
+}
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: var(--app-font-sans); }
+::selection { background: #ecb538; color: #503a2e; }
+.serif { font-family: var(--app-font-serif); font-weight: 400; }
+.eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .19em; font-weight: 700; color: #9b7953; }
+.site-wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
+.nav-link { color: #624b3d; font-size: .82rem; transition: color .2s ease; }
+.nav-link:hover { color: #b17b16; }
+.cta { transition: transform .25s ease, background-color .25s ease; }
+.cta:hover { transform: translateY(-2px); background-color: #dca51d; }
+.reveal { animation: rise-in .8s cubic-bezier(.2,.7,.2,1) both; }
+.reveal-delay { animation-delay: .16s; }
+.reveal-late { animation-delay: .3s; }
+@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+@media (max-width: 720px) { .site-wrap { width: min(100% - 36px, 560px); } }
