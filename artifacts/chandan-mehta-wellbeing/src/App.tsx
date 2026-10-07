@@ -86,15 +86,16 @@ function Header() {
     ['About', '#about'],
   ];
   return (
-    <header className="absolute left-0 right-0 top-0 z-20 bg-[#ECB538] shadow-[0_1px_0_rgba(101,53,36,.14)]">
+    <header className="fixed left-0 right-0 top-0 z-50 bg-[#ECB538]/95 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
       <div className="site-wrap flex h-[92px] items-center justify-between">
         <BrandMark />
+        <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="hidden h-12 w-auto object-contain md:block" />
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
-          {nav.map(([label, href]) => <a key={label} className="nav-link" href={href}>{label}</a>)}
+          {nav.map(([label, href]) => <a key={label} className="nav-link !text-white hover:!text-[#503a2e]" href={href}>{label}</a>)}
           <span className="nav-link cursor-default opacity-60" aria-disabled="true" title="Journal is coming soon">Journal <span className="text-[.6rem]">· SOON</span></span>
           <a href="#contact" className="rounded-full border border-white bg-white px-5 py-3 text-[.78rem] font-semibold text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
-        <button className="rounded-full border border-[#653524]/20 p-2 text-[#653524] md:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
+        <button className="rounded-full border border-white/40 p-2 text-white md:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
@@ -109,7 +110,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[740px] items-end overflow-hidden bg-[#ede4d1] pb-20 pt-32 md:min-h-[790px] md:pb-28">
+    <section id="top" className="relative flex min-h-[740px] items-center overflow-hidden bg-[#ede4d1] py-32 md:min-h-[790px] md:py-36">
       <img src="/wellbeing-garden.jpg" alt="A quiet garden path, warmed by early morning light" className="absolute inset-0 h-full w-full object-cover object-center" width="1800" height="1200" fetchPriority="high" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#4b3425]/10 to-transparent" />
@@ -123,7 +124,7 @@ function Hero() {
             <a href="#who" className="inline-flex items-center gap-2 text-sm font-medium text-[#624b3d]">Find your starting point <ArrowDown size={15} /></a>
           </div>
         </div>
-        <div className="mt-16 flex items-center gap-4 border-t border-[#503a2e]/15 pt-5 text-[.67rem] font-semibold uppercase tracking-[.16em] text-[#755f4e] md:mt-24">
+        <div className="mt-20 flex items-center gap-4 border-t border-[#503a2e]/15 pt-5 text-[.67rem] font-semibold uppercase tracking-[.16em] text-[#755f4e] md:mt-28">
           <span className="h-2 w-2 rounded-full bg-[#ECB538]" /> Grounded in practice <span className="hidden text-[#b9aa9a] sm:inline">/</span><span className="hidden sm:inline">Made for everyday life</span>
         </div>
       </div>
@@ -232,7 +233,7 @@ function ApproachSection() {
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
               {i === 0 && <VibrationRings tone="#557464" position="top" />}
-              {i === 1 && <img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-multiply" loading="lazy" width="1200" height="900" />}
+              {i === 1 && <><img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover object-[center_bottom] opacity-60 mix-blend-multiply" loading="lazy" width="1200" height="900" /><span className="absolute inset-0 bg-gradient-to-tr from-[#f3ded7] via-[#f3ded7]/10 to-transparent" /><span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#f3ded7]/95 via-[#f3ded7]/45 to-transparent" /></>}
               {i === 2 && <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1200" height="1200" />}
               {i === 3 && <VibrationRings tone="#496a73" position="bottom" />}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
@@ -371,6 +372,7 @@ function Footer() {
       <div className="site-wrap">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
           <div>
+            <img src="/chandan-logo-stacked.png" alt="Chandan Mehta Wellbeing" className="mb-5 h-24 w-auto object-contain object-left" />
             <a href="#top" className="serif text-3xl" data-testid="link-footer-home">Chandan Mehta</a>
             <p className="mt-1 text-[.62rem] uppercase tracking-[.26em] text-[#e4c77e]">Wellbeing</p>
             <p className="mt-5 text-xs text-[#ded1c0]">Mumbai, India</p>
