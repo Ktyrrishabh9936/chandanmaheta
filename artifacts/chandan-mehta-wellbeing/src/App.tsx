@@ -171,7 +171,7 @@ function WorkSection() {
               <div className="relative flex min-h-[190px] items-center justify-center overflow-hidden md:min-h-[280px]">
                 {item.icon === 'root' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[85%] w-[85%]"><g fill="none" stroke="#557464" strokeWidth="1.25" opacity=".75"><path d="M130 18v82m0-26L94 37m36 34 37-37M130 72 72 63m58 21 76-21m-76 22-43 52m43-44 45 72m-45-80-78 64m78-59 90 57M130 100v103m-48-66-20 45m34-52 4 63m82-48-8 51m23-53 24 29M94 37 64 26m30 11-4-27m77 0-4 23m4-23 29 0M72 63 39 50m33 13-5-32m139 11 25-18m-25 18 4-34"/></g></svg>}
                 {item.icon === 'branch' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[88%] w-[88%]"><g fill="none" stroke="#9c6959" strokeWidth="1.35" opacity=".68"><path d="M125 204c1-45-4-95 9-177m-9 137c-19-27-42-45-72-61m75 29c26-33 45-52 78-73M133 83c-20-21-34-33-56-43m56 25c21-21 36-31 58-41m-66 90c-28-3-50 0-75 11m82-4c30-8 48-6 76 0"/><path d="M72 103c-13-17-28-18-40-13 8 16 21 23 40 13Zm58-22c-3-20 7-31 22-37 4 18-3 31-22 37Zm48-3c8-18 23-23 39-20-5 18-18 27-39 20ZM78 42C66 26 69 12 80 1c11 15 11 28-2 41Zm112-18c1-19 12-29 28-33 0 19-9 30-28 33ZM59 115c-19-10-32-5-42 7 16 10 30 9 42-7Zm161 1c16-14 30-13 43-4-13 14-27 17-43 4Z"/></g></svg>}
-                {item.icon === 'leaf' && <img src="/personal-wellbeing-journey.webp" alt="A woman reflecting while writing in her journal" className="h-full w-full object-cover object-[52%_center]" width="1200" height="1500" loading="lazy" />}
+                {item.icon === 'leaf' && <img src="/personal-wellbeing-journey.webp" alt="A woman reflecting while writing in her journal" className="absolute inset-0 h-full w-full object-cover object-[52%_center]" width="1200" height="1500" loading="lazy" />}
                 <span className="absolute left-6 top-6 text-[.65rem] font-semibold tracking-[.18em] text-[#503a2e]/65">{item.number}</span>
               </div>
               <div className="flex flex-col justify-center px-7 py-9 md:px-12 md:py-12">
@@ -199,7 +199,7 @@ function VibrationRings({ tone, position }: { tone: string; position: 'top' | 'b
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute ${position === 'top' ? '-right-16 -top-20' : '-bottom-28 -right-20'} h-[430px] w-[430px]`}
+      className={`pointer-events-none absolute ${position === 'top' ? '-right-[200px] -top-[200px]' : '-bottom-[200px] -right-[200px]'} h-[430px] w-[430px]`}
     >
       {sizes.map((size, index) => (
         <span
@@ -209,8 +209,8 @@ function VibrationRings({ tone, position }: { tone: string; position: 'top' | 'b
             width: size,
             height: size,
             border: `${index % 3 === 0 ? 2 : index % 2 === 0 ? 1.5 : 1}px solid ${tone}`,
-            opacity: 0.34 - index * 0.025,
-            transform: `translate(-50%, -50%) translate(${index % 2 === 0 ? index * 2 : -index * 1.5}px, ${index * 1.5}px)`,
+            opacity: 0.3 - index * 0.022,
+            transform: `translate(-50%, -50%) translate(${index % 2 === 0 ? index * 1.2 : -index}px, ${index}px)`,
           }}
         />
       ))}
@@ -232,8 +232,8 @@ function ApproachSection() {
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
               {i === 0 && <VibrationRings tone="#557464" position="top" />}
-              {i === 1 && <img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-multiply" loading="lazy" width="1200" height="900" />}
-              {i === 2 && <img src="/still-pond.jpg" alt="Sunrise reflected on a still forest pond" className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply" loading="lazy" width="1800" height="1200" />}
+              {i === 1 && <img src="/dew-leaf.jpg" alt="A dew-covered leaf representing natural nourishment" className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-multiply" loading="lazy" width="800" height="1000" />}
+              {i === 2 && <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1200" height="1200" />}
               {i === 3 && <VibrationRings tone="#496a73" position="bottom" />}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
               <div className="relative z-10 flex items-end justify-between gap-3">
