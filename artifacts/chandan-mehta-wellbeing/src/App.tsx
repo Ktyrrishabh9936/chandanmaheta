@@ -66,7 +66,7 @@ const practices = [
 function BrandMark() {
   return (
     <a href="#top" aria-label="Chandan Mehta Wellbeing home" className="flex items-center gap-3" data-testid="link-brand-home">
-      <span className="flex items-center gap-3 rounded-xl bg-[#ECB538] px-4 py-2.5 text-[#fffdf4] shadow-sm">
+      <span className="flex items-center gap-3 text-[#503a2e]">
         <img src="/chandan-logo-mark.png" alt="" className="h-10 w-10 shrink-0 object-contain" width="328" height="292" />
         <span className="leading-tight">
           <span className="serif block text-[1.23rem] tracking-[-.02em]">Chandan Mehta</span>
@@ -86,19 +86,19 @@ function Header() {
     ['About', '#about'],
   ];
   return (
-    <header className="absolute left-0 right-0 top-0 z-20">
-      <div className="site-wrap flex h-[92px] items-center justify-between border-b border-[#fffefa]/55">
+    <header className="absolute left-0 right-0 top-0 z-20 bg-[#ECB538] shadow-[0_1px_0_rgba(80,58,46,.12)]">
+      <div className="site-wrap flex h-[92px] items-center justify-between">
         <BrandMark />
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
           {nav.map(([label, href]) => <a key={label} className="nav-link" href={href}>{label}</a>)}
           <span className="nav-link cursor-default opacity-60" aria-disabled="true" title="Journal is coming soon">Journal <span className="text-[.6rem]">· SOON</span></span>
-          <a href="#contact" className="cta rounded-full bg-[#ECB538] px-5 py-3 text-[.78rem] font-semibold text-[#503a2e]" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
+          <a href="#contact" className="rounded-full bg-[#503a2e] px-5 py-3 text-[.78rem] font-semibold text-[#fffdf4] transition-transform hover:-translate-y-0.5" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
         <button className="rounded-full border border-[#503a2e]/15 p-2 md:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 rounded-2xl border border-[#e8e1d5] bg-[#fffefa] p-5 shadow-lg md:hidden">
+      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 rounded-2xl border border-[#503a2e]/15 bg-[#fffefa] p-5 shadow-lg md:hidden">
         {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="nav-link py-1">{label}</a>)}
         <span className="nav-link cursor-default py-1 opacity-60" aria-disabled="true">Journal · coming soon</span>
         <a href="#contact" onClick={() => setOpen(false)} className="rounded-full bg-[#ECB538] px-5 py-3 text-center text-sm font-semibold">Get in touch</a>
@@ -171,7 +171,7 @@ function WorkSection() {
               <div className="relative flex min-h-[190px] items-center justify-center overflow-hidden md:min-h-[280px]">
                 {item.icon === 'root' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[85%] w-[85%]"><g fill="none" stroke="#557464" strokeWidth="1.25" opacity=".75"><path d="M130 18v82m0-26L94 37m36 34 37-37M130 72 72 63m58 21 76-21m-76 22-43 52m43-44 45 72m-45-80-78 64m78-59 90 57M130 100v103m-48-66-20 45m34-52 4 63m82-48-8 51m23-53 24 29M94 37 64 26m30 11-4-27m77 0-4 23m4-23 29 0M72 63 39 50m33 13-5-32m139 11 25-18m-25 18 4-34"/></g></svg>}
                 {item.icon === 'branch' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[88%] w-[88%]"><g fill="none" stroke="#9c6959" strokeWidth="1.35" opacity=".68"><path d="M125 204c1-45-4-95 9-177m-9 137c-19-27-42-45-72-61m75 29c26-33 45-52 78-73M133 83c-20-21-34-33-56-43m56 25c21-21 36-31 58-41m-66 90c-28-3-50 0-75 11m82-4c30-8 48-6 76 0"/><path d="M72 103c-13-17-28-18-40-13 8 16 21 23 40 13Zm58-22c-3-20 7-31 22-37 4 18-3 31-22 37Zm48-3c8-18 23-23 39-20-5 18-18 27-39 20ZM78 42C66 26 69 12 80 1c11 15 11 28-2 41Zm112-18c1-19 12-29 28-33 0 19-9 30-28 33ZM59 115c-19-10-32-5-42 7 16 10 30 9 42-7Zm161 1c16-14 30-13 43-4-13 14-27 17-43 4Z"/></g></svg>}
-                {item.icon === 'leaf' && <img src="/dew-leaf.jpg" alt="A leaf holding a drop of morning dew" className="h-full w-full object-cover opacity-90" width="800" height="1000" loading="lazy" />}
+                {item.icon === 'leaf' && <img src="/personal-wellbeing-journey.webp" alt="A woman reflecting while writing in her journal" className="h-full w-full object-cover object-[52%_center]" width="1200" height="1500" loading="lazy" />}
                 <span className="absolute left-6 top-6 text-[.65rem] font-semibold tracking-[.18em] text-[#503a2e]/65">{item.number}</span>
               </div>
               <div className="flex flex-col justify-center px-7 py-9 md:px-12 md:py-12">
@@ -194,6 +194,30 @@ function WorkSection() {
   );
 }
 
+function VibrationRings({ tone, position }: { tone: string; position: 'top' | 'bottom' }) {
+  const sizes = [96, 136, 180, 228, 282, 344, 414];
+  return (
+    <div
+      aria-hidden="true"
+      className={`pointer-events-none absolute ${position === 'top' ? '-right-16 -top-20' : '-bottom-28 -right-20'} h-[430px] w-[430px]`}
+    >
+      {sizes.map((size, index) => (
+        <span
+          key={size}
+          className="absolute left-1/2 top-1/2 rounded-full"
+          style={{
+            width: size,
+            height: size,
+            border: `${index % 3 === 0 ? 2 : index % 2 === 0 ? 1.5 : 1}px solid ${tone}`,
+            opacity: 0.34 - index * 0.025,
+            transform: `translate(-50%, -50%) translate(${index % 2 === 0 ? index * 2 : -index * 1.5}px, ${index * 1.5}px)`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ApproachSection() {
   return (
     <section id="approach" className="bg-[#fffefa] py-24 md:py-32">
@@ -207,10 +231,10 @@ function ApproachSection() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
-              {i === 0 && <span aria-hidden className="absolute -right-5 -top-8 h-36 w-36 rounded-full border border-[#557464]/25" />}
-              {i === 1 && <img src="/dew-leaf.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-multiply" loading="lazy" width="800" height="1000" />}
+              {i === 0 && <VibrationRings tone="#557464" position="top" />}
+              {i === 1 && <img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-multiply" loading="lazy" width="1200" height="900" />}
               {i === 2 && <img src="/still-pond.jpg" alt="Sunrise reflected on a still forest pond" className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply" loading="lazy" width="1800" height="1200" />}
-              {i === 3 && <span aria-hidden className="absolute -bottom-12 -right-7 h-48 w-48 rounded-full border border-[#496a73]/25" />}
+              {i === 3 && <VibrationRings tone="#496a73" position="bottom" />}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
               <div className="relative z-10 flex items-end justify-between gap-3">
                 <h3 className="serif max-w-[270px] text-[2rem] leading-[.98] tracking-[-.015em]">{practice.title}</h3>
@@ -249,16 +273,17 @@ function MeditationSection() {
           </div>
           <a href="#contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold text-[#503a2e]">Ask about learning TM <ArrowRight size={16} /></a>
         </div>
-        <div className="relative mx-auto flex aspect-square w-full max-w-[390px] items-center justify-center rounded-full bg-[#e6c662]/40">
-          <div className="absolute h-[82%] w-[82%] rounded-full border border-[#8a835a]/35" />
-          <div className="absolute h-[62%] w-[62%] rounded-full border border-[#8a835a]/35" />
-          <div className="absolute h-[42%] w-[42%] rounded-full border border-[#8a835a]/35" />
-          <div className="relative text-center">
-            <span className="serif block text-[6.8rem] leading-none">20</span>
-            <span className="mt-1 block text-[.7rem] font-semibold uppercase tracking-[.2em]">minutes</span>
+        <div className="relative mx-auto aspect-square w-full max-w-[430px] overflow-hidden rounded-[2rem] shadow-[0_24px_70px_rgba(73,93,77,.18)]">
+          <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center" loading="lazy" width="1200" height="1200" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#31453a]/65 via-transparent to-[#fffefa]/10" />
+          <div className="absolute bottom-6 left-6 rounded-[1.4rem] border border-[#fffefa]/45 bg-[#fffefa]/90 px-6 py-5 text-[#503a2e] shadow-lg backdrop-blur-sm">
+            <div className="flex items-end gap-3">
+              <span className="serif text-6xl leading-[.8]">20</span>
+              <span className="pb-1 text-[.66rem] font-semibold uppercase tracking-[.2em]">minutes</span>
+            </div>
             <span className="mt-3 block text-sm text-[#6b6047]">twice a day</span>
           </div>
-          <span className="absolute right-[-4%] top-[14%] rounded-full bg-[#fffefa]/80 px-4 py-2 text-[.65rem] font-semibold uppercase tracking-[.13em]">No empty mind required</span>
+          <span className="absolute right-5 top-5 rounded-full bg-[#fffefa]/88 px-4 py-2 text-[.62rem] font-semibold uppercase tracking-[.12em] text-[#503a2e] backdrop-blur-sm">No empty mind required</span>
         </div>
         <div className="md:col-span-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#697667]/25 pt-5 text-[.68rem] uppercase tracking-[.14em] text-[#626a5f]">
           <span>Personal instruction</span><span>Certified teacher</span><span>Maharashtra, India</span><span>Learn at your own pace</span>
