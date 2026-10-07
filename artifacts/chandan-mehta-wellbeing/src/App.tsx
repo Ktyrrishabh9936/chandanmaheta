@@ -114,8 +114,8 @@ function Hero() {
       <img src="/wellbeing-garden.jpg" alt="A quiet garden path, warmed by early morning light" className="absolute inset-0 h-full w-full object-cover object-center" width="1800" height="1200" fetchPriority="high" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#4b3425]/10 to-transparent" />
-      <div className="site-wrap relative z-10">
-        <div className="max-w-[700px]">
+      <div className="site-wrap relative z-10 my-auto">
+        <div className="max-w-[700px] my-auto">
           <p className="eyebrow mb-7 reveal">Wellbeing, rooted in real life</p>
           <h1 className="serif max-w-[680px] text-[clamp(3.6rem,8vw,7.3rem)] leading-[.91] tracking-[-.045em] text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
           <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India. A lifelong yogic practice. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
