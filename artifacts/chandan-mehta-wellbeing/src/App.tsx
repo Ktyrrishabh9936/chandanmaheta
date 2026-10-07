@@ -88,7 +88,7 @@ function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-[#ECB538]/95 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
       <div className="site-wrap flex h-[92px] items-center justify-between">
-        <BrandMark />
+        {/* <BrandMark /> */}
         <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="hidden h-12 w-auto object-contain md:block" />
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
           {nav.map(([label, href]) => <a key={label} className="nav-link !text-white hover:!text-[#503a2e]" href={href}>{label}</a>)}
