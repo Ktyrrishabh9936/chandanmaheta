@@ -232,7 +232,7 @@ function ApproachSection() {
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
               {i === 0 && <VibrationRings tone="#557464" position="top" />}
-              {i === 1 && <img src="/dew-leaf.jpg" alt="A dew-covered leaf representing natural nourishment" className="absolute inset-0 h-full w-full object-cover opacity-25 mix-blend-multiply" loading="lazy" width="800" height="1000" />}
+              {i === 1 && <img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover opacity-35 mix-blend-multiply" loading="lazy" width="1200" height="900" />}
               {i === 2 && <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1200" height="1200" />}
               {i === 3 && <VibrationRings tone="#496a73" position="bottom" />}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
@@ -273,17 +273,16 @@ function MeditationSection() {
           </div>
           <a href="#contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold text-[#503a2e]">Ask about learning TM <ArrowRight size={16} /></a>
         </div>
-        <div className="relative mx-auto aspect-square w-full max-w-[430px] overflow-hidden rounded-[2rem] shadow-[0_24px_70px_rgba(73,93,77,.18)]">
-          <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center" loading="lazy" width="1200" height="1200" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#31453a]/65 via-transparent to-[#fffefa]/10" />
-          <div className="absolute bottom-6 left-6 rounded-[1.4rem] border border-[#fffefa]/45 bg-[#fffefa]/90 px-6 py-5 text-[#503a2e] shadow-lg backdrop-blur-sm">
-            <div className="flex items-end gap-3">
-              <span className="serif text-6xl leading-[.8]">20</span>
-              <span className="pb-1 text-[.66rem] font-semibold uppercase tracking-[.2em]">minutes</span>
-            </div>
+        <div className="relative mx-auto flex aspect-square w-full max-w-[390px] items-center justify-center rounded-full bg-[#e6c662]/40">
+          <div className="absolute h-[82%] w-[82%] rounded-full border border-[#8a835a]/35" />
+          <div className="absolute h-[62%] w-[62%] rounded-full border border-[#8a835a]/35" />
+          <div className="absolute h-[42%] w-[42%] rounded-full border border-[#8a835a]/35" />
+          <div className="relative text-center">
+            <span className="serif block text-[6.8rem] leading-none">20</span>
+            <span className="mt-1 block text-[.7rem] font-semibold uppercase tracking-[.2em]">minutes</span>
             <span className="mt-3 block text-sm text-[#6b6047]">twice a day</span>
           </div>
-          <span className="absolute right-5 top-5 rounded-full bg-[#fffefa]/88 px-4 py-2 text-[.62rem] font-semibold uppercase tracking-[.12em] text-[#503a2e] backdrop-blur-sm">No empty mind required</span>
+          <span className="absolute right-[-4%] top-[14%] rounded-full bg-[#fffefa]/80 px-4 py-2 text-[.65rem] font-semibold uppercase tracking-[.13em]">No empty mind required</span>
         </div>
         <div className="md:col-span-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#697667]/25 pt-5 text-[.68rem] uppercase tracking-[.14em] text-[#626a5f]">
           <span>Personal instruction</span><span>Certified teacher</span><span>Maharashtra, India</span><span>Learn at your own pace</span>
