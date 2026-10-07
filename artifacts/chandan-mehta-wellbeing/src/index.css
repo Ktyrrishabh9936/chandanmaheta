@@ -108,8 +108,8 @@ body { background: var(--paper); color: var(--ink); font-family: var(--app-font-
 .serif { font-family: var(--app-font-serif); font-weight: 400; }
 .eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .19em; font-weight: 700; color: #9b7953; }
 .site-wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
-.nav-link { color: #624b3d; font-size: .82rem; transition: color .2s ease; }
-.nav-link:hover { color: #b17b16; }
+.nav-link { color: #653524; font-size: .82rem; transition: color .2s ease; }
+.nav-link:hover { color: #4b2419; }
 .cta { transition: transform .25s ease, background-color .25s ease; }
 .cta:hover { transform: translateY(-2px); background-color: #dca51d; }
 .reveal { animation: rise-in .8s cubic-bezier(.2,.7,.2,1) both; }

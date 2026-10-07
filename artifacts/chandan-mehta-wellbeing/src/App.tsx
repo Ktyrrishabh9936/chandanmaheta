@@ -29,7 +29,7 @@ const offerings = [
       'Twelve sessions over four months, personally guided and shaped around your life, your pressures and your goals.',
     note: 'One-to-one · 4 months',
     color: '#e4ecec',
-    icon: 'leaf',
+    icon: 'apple',
   },
 ];
 
@@ -66,7 +66,7 @@ const practices = [
 function BrandMark() {
   return (
     <a href="#top" aria-label="Chandan Mehta Wellbeing home" className="flex items-center gap-3" data-testid="link-brand-home">
-      <span className="flex items-center gap-3 text-[#503a2e]">
+      <span className="flex items-center gap-3 text-[#653524]">
         <img src="/chandan-logo-mark.png" alt="" className="h-10 w-10 shrink-0 object-contain" width="328" height="292" />
         <span className="leading-tight">
           <span className="serif block text-[1.23rem] tracking-[-.02em]">Chandan Mehta</span>
@@ -86,15 +86,15 @@ function Header() {
     ['About', '#about'],
   ];
   return (
-    <header className="absolute left-0 right-0 top-0 z-20 bg-[#ECB538] shadow-[0_1px_0_rgba(80,58,46,.12)]">
+    <header className="absolute left-0 right-0 top-0 z-20 bg-[#ECB538] shadow-[0_1px_0_rgba(101,53,36,.14)]">
       <div className="site-wrap flex h-[92px] items-center justify-between">
         <BrandMark />
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
           {nav.map(([label, href]) => <a key={label} className="nav-link" href={href}>{label}</a>)}
           <span className="nav-link cursor-default opacity-60" aria-disabled="true" title="Journal is coming soon">Journal <span className="text-[.6rem]">· SOON</span></span>
-          <a href="#contact" className="rounded-full bg-[#503a2e] px-5 py-3 text-[.78rem] font-semibold text-[#fffdf4] transition-transform hover:-translate-y-0.5" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
+          <a href="#contact" className="rounded-full border border-white bg-white px-5 py-3 text-[.78rem] font-semibold text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
-        <button className="rounded-full border border-[#503a2e]/15 p-2 md:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
+        <button className="rounded-full border border-[#653524]/20 p-2 text-[#653524] md:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
@@ -171,7 +171,7 @@ function WorkSection() {
               <div className="relative flex min-h-[190px] items-center justify-center overflow-hidden md:min-h-[280px]">
                 {item.icon === 'root' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[85%] w-[85%]"><g fill="none" stroke="#557464" strokeWidth="1.25" opacity=".75"><path d="M130 18v82m0-26L94 37m36 34 37-37M130 72 72 63m58 21 76-21m-76 22-43 52m43-44 45 72m-45-80-78 64m78-59 90 57M130 100v103m-48-66-20 45m34-52 4 63m82-48-8 51m23-53 24 29M94 37 64 26m30 11-4-27m77 0-4 23m4-23 29 0M72 63 39 50m33 13-5-32m139 11 25-18m-25 18 4-34"/></g></svg>}
                 {item.icon === 'branch' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[88%] w-[88%]"><g fill="none" stroke="#9c6959" strokeWidth="1.35" opacity=".68"><path d="M125 204c1-45-4-95 9-177m-9 137c-19-27-42-45-72-61m75 29c26-33 45-52 78-73M133 83c-20-21-34-33-56-43m56 25c21-21 36-31 58-41m-66 90c-28-3-50 0-75 11m82-4c30-8 48-6 76 0"/><path d="M72 103c-13-17-28-18-40-13 8 16 21 23 40 13Zm58-22c-3-20 7-31 22-37 4 18-3 31-22 37Zm48-3c8-18 23-23 39-20-5 18-18 27-39 20ZM78 42C66 26 69 12 80 1c11 15 11 28-2 41Zm112-18c1-19 12-29 28-33 0 19-9 30-28 33ZM59 115c-19-10-32-5-42 7 16 10 30 9 42-7Zm161 1c16-14 30-13 43-4-13 14-27 17-43 4Z"/></g></svg>}
-                {item.icon === 'leaf' && <img src="/personal-wellbeing-journey.webp" alt="A woman reflecting while writing in her journal" className="absolute inset-0 h-full w-full object-cover object-[52%_center]" width="1200" height="1500" loading="lazy" />}
+                {item.icon === 'apple' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[86%] w-[86%]"><g fill="none" stroke="#653524" strokeLinecap="round" strokeLinejoin="round" opacity=".56"><path strokeWidth="1.55" d="M132 69c-17-20-42-22-58-8-18 16-20 48-8 78 13 31 34 57 55 57 8 0 12-5 19-5s12 5 20 5c21 0 42-26 55-57 12-30 10-62-8-78-16-14-41-12-58 8-5 6-12 9-17 9s-12-3-17-9Z"/><path strokeWidth="1.8" d="M135 77c-1-27 7-43 24-55"/><path strokeWidth="1.35" d="M148 34c13-17 31-19 46-11-6 17-22 27-46 11Z"/><path strokeWidth="1.1" d="M156 32c10-4 20-6 31-6M89 70c-12 13-17 31-14 51m124-51c12 13 17 31 14 51"/><path strokeWidth=".9" d="M99 185c-14-13-25-30-33-49m98 49c14-13 25-30 33-49"/></g></svg>}
                 <span className="absolute left-6 top-6 text-[.65rem] font-semibold tracking-[.18em] text-[#503a2e]/65">{item.number}</span>
               </div>
               <div className="flex flex-col justify-center px-7 py-9 md:px-12 md:py-12">
