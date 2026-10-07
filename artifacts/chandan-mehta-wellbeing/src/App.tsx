@@ -91,7 +91,7 @@ function Header() {
         {/* <BrandMark /> */}
         <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="hidden h-12 w-auto object-contain md:block" />
         <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
-          {nav.map(([label, href]) => <a key={label} className="nav-link !text-white hover:!text-[#503a2e]" href={href}>{label}</a>)}
+          {nav.map(([label, href]) => <a key={label} className="nav-link !text-white font-bold hover:!text-[#503a2e]" href={href}>{label}</a>)}
           <span className="nav-link cursor-default opacity-60" aria-disabled="true" title="Journal is coming soon">Journal <span className="text-[.6rem]">· SOON</span></span>
           <a href="#contact" className="rounded-full border border-white bg-white px-5 py-3 text-[.78rem] font-semibold text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
@@ -115,7 +115,7 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#4b3425]/10 to-transparent" />
       <div className="site-wrap relative z-10 my-auto">
-        <div className="max-w-[700px] my-auto">
+        <div className="max-w-[700px] mt-[25px]">
           <p className="eyebrow mb-7 reveal">Wellbeing, rooted in real life</p>
           <h1 className="serif max-w-[680px] text-[clamp(3.6rem,8vw,7.3rem)] leading-[.91] tracking-[-.045em] text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
           <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India. A lifelong yogic practice. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
@@ -368,13 +368,13 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#503a2e] py-12 text-[#f8f3e9]">
+    <footer className="bg-[#653524] py-12 text-[#f8f3e9]">
       <div className="site-wrap">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
           <div>
             <img src="/chandan-logo-stacked.png" alt="Chandan Mehta Wellbeing" className="mb-5 h-24 w-auto object-contain object-left" />
-            <a href="#top" className="serif text-3xl" data-testid="link-footer-home">Chandan Mehta</a>
-            <p className="mt-1 text-[.62rem] uppercase tracking-[.26em] text-[#e4c77e]">Wellbeing</p>
+            {/* <a href="#top" className="serif text-3xl" data-testid="link-footer-home">Chandan Mehta</a>
+            <p className="mt-1 text-[.62rem] uppercase tracking-[.26em] text-[#e4c77e]">Wellbeing</p> */}
             <p className="mt-5 text-xs text-[#ded1c0]">Mumbai, India</p>
           </div>
           <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm text-[#f1e8da]">
