@@ -118,7 +118,7 @@ function Hero() {
         <div className="max-w-[700px] mt-[25px]">
           <p className="eyebrow mb-7 reveal">Wellbeing, rooted in real life</p>
           <h1 className="serif max-w-[680px] text-[clamp(3.6rem,8vw,7.3rem)] leading-[.91] tracking-[-.045em] text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
-          <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India.The only certified female Transcendental Meditation teacher in Maharashtra.</p>
+          <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
           <div className="mt-9 flex flex-wrap items-center gap-5 reveal reveal-late">
             <a href="#work" className="cta inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold text-[#503a2e]" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
             <a href="#who" className="inline-flex items-center gap-2 text-sm font-medium text-[#624b3d]">Find your starting point <ArrowDown size={15} /></a>
@@ -234,7 +234,11 @@ function ApproachSection() {
               {i === 0 && <img src="/applied-yogic-science-v2.png" alt="A woman practising pranayama beside a peaceful river" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" />}
               {i === 1 && <><img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover object-[center_bottom] opacity-60 mix-blend-multiply" loading="lazy" width="1200" height="900" /><span className="absolute inset-0 bg-gradient-to-tr from-[#f3ded7] via-[#f3ded7]/10 to-transparent" /><span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#f3ded7]/95 via-[#f3ded7]/45 to-transparent" /></>}
               {i === 2 && <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1200" height="1200" />}
-              {i === 3 && <img src="/coaching-guidance-v2.png" alt="Two wooden chairs beneath a mature tree beside an open garden trail" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" />}
+              {i === 3 && <>
+                <img src="/coaching-guidance-readable.png" alt="Two wooden chairs beneath a mature tree beside an open garden trail" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1536" height="1536" />
+                <span className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#eef0df]/55 to-transparent" />
+                <span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#dfe9d5]/55 to-transparent" />
+              </>}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
               <div className="relative z-10 flex items-end justify-between gap-3">
                 <h3 className="serif max-w-[270px] text-[2rem] leading-[.98] tracking-[-.015em]">{practice.title}</h3>
