@@ -9,10 +9,9 @@ const offerings = [
     title: 'Strategic Wellbeing Partnership',
     description:
       'I work with your leadership to build wellbeing into the heart of your organisation or space, not as another programme, but as the way you operate.',
-    note: 'For the long view',
+    note: 'For the Wellbeing, built to last',
     color: '#e3ece2',
-    image: '/strategic-roots.png',
-    imageAlt: 'The exposed roots of a mature tree in a quiet woodland',
+     icon: 'root',
   },
   {
     number: '02',
@@ -21,8 +20,7 @@ const offerings = [
       'I design and lead wellbeing sessions, programmes and retreats around your people, so they learn practices they can use every day.',
     note: 'For a shared experience',
     color: '#f1dfd6',
-    image: '/curated-branches.png',
-    imageAlt: 'Tree branches reaching upward into soft morning light',
+   icon: 'branch',
   },
   {
     number: '03',
@@ -31,8 +29,7 @@ const offerings = [
       'I guide you personally through 12 sessions over four months, shaped around your life, your pressures and your goals.',
     note: 'One-to-one · 4 months',
     color: '#e4ecec',
-    image: '/dew-leaf.jpg',
-    imageAlt: 'A fresh green leaf holding drops of morning dew',
+     icon: 'apple',
   },
 ];
 
@@ -171,7 +168,9 @@ function WorkSection() {
           {offerings.map((item) => (
             <article key={item.number} className="group relative grid min-h-[270px] overflow-hidden rounded-[1.6rem] md:grid-cols-[.72fr_1.28fr]" style={{ backgroundColor: item.color }}>
               <div className="relative flex min-h-[190px] items-center justify-center overflow-hidden md:min-h-[280px]">
-                <img src={item.image} alt={item.imageAlt} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+             {item.icon === 'root' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[85%] w-[85%]"><g fill="none" stroke="#557464" strokeWidth="1.25" opacity=".75"><path d="M130 18v82m0-26L94 37m36 34 37-37M130 72 72 63m58 21 76-21m-76 22-43 52m43-44 45 72m-45-80-78 64m78-59 90 57M130 100v103m-48-66-20 45m34-52 4 63m82-48-8 51m23-53 24 29M94 37 64 26m30 11-4-27m77 0-4 23m4-23 29 0M72 63 39 50m33 13-5-32m139 11 25-18m-25 18 4-34"/></g></svg>}
+                {item.icon === 'branch' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[88%] w-[88%]"><g fill="none" stroke="#9c6959" strokeWidth="1.35" opacity=".68"><path d="M125 204c1-45-4-95 9-177m-9 137c-19-27-42-45-72-61m75 29c26-33 45-52 78-73M133 83c-20-21-34-33-56-43m56 25c21-21 36-31 58-41m-66 90c-28-3-50 0-75 11m82-4c30-8 48-6 76 0"/><path d="M72 103c-13-17-28-18-40-13 8 16 21 23 40 13Zm58-22c-3-20 7-31 22-37 4 18-3 31-22 37Zm48-3c8-18 23-23 39-20-5 18-18 27-39 20ZM78 42C66 26 69 12 80 1c11 15 11 28-2 41Zm112-18c1-19 12-29 28-33 0 19-9 30-28 33ZM59 115c-19-10-32-5-42 7 16 10 30 9 42-7Zm161 1c16-14 30-13 43-4-13 14-27 17-43 4Z"/></g></svg>}
+                {item.icon === 'apple' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[86%] w-[86%]"><g fill="none" stroke="#653524" strokeLinecap="round" strokeLinejoin="round" opacity=".56"><path strokeWidth="1.55" d="M132 69c-17-20-42-22-58-8-18 16-20 48-8 78 13 31 34 57 55 57 8 0 12-5 19-5s12 5 20 5c21 0 42-26 55-57 12-30 10-62-8-78-16-14-41-12-58 8-5 6-12 9-17 9s-12-3-17-9Z"/><path strokeWidth="1.8" d="M135 77c-1-27 7-43 24-55"/><path strokeWidth="1.35" d="M148 34c13-17 31-19 46-11-6 17-22 27-46 11Z"/><path strokeWidth="1.1" d="M156 32c10-4 20-6 31-6M89 70c-12 13-17 31-14 51m124-51c12 13 17 31 14 51"/><path strokeWidth=".9" d="M99 185c-14-13-25-30-33-49m98 49c14-13 25-30 33-49"/></g></svg>}
                 <span className="absolute inset-0 bg-gradient-to-r from-[#503a2e]/10 via-transparent to-transparent" />
                 <span className="absolute left-6 top-6 text-[.65rem] font-semibold tracking-[.18em] text-[#503a2e]/65">{item.number}</span>
               </div>
