@@ -9,7 +9,7 @@ const offerings = [
     title: 'Strategic Wellbeing Partnership',
     description:
       'I work with your leadership to build wellbeing into the heart of your organisation or space—not as another programme, but as the way you operate.',
-    note: 'For the long view',
+    note: 'For the Wellbeing, built to last',
     color: '#e3ece2',
     icon: 'root',
   },
@@ -118,15 +118,13 @@ function Hero() {
         <div className="max-w-[700px] mt-[25px]">
           <p className="eyebrow mb-7 reveal">Wellbeing, rooted in real life</p>
           <h1 className="serif max-w-[680px] text-[clamp(3.6rem,8vw,7.3rem)] leading-[.91] tracking-[-.045em] text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
-          <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India. A lifelong yogic practice. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
+          <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India.The only certified female Transcendental Meditation teacher in Maharashtra.</p>
           <div className="mt-9 flex flex-wrap items-center gap-5 reveal reveal-late">
             <a href="#work" className="cta inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold text-[#503a2e]" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
             <a href="#who" className="inline-flex items-center gap-2 text-sm font-medium text-[#624b3d]">Find your starting point <ArrowDown size={15} /></a>
           </div>
         </div>
-        <div className="mt-20 flex items-center gap-4 border-t border-[#503a2e]/15 pt-5 text-[.67rem] font-semibold uppercase tracking-[.16em] text-[#755f4e] md:mt-28">
-          <span className="h-2 w-2 rounded-full bg-[#ECB538]" /> Grounded in practice <span className="hidden text-[#b9aa9a] sm:inline">/</span><span className="hidden sm:inline">Made for everyday life</span>
-        </div>
+        
       </div>
       <div className="absolute bottom-0 right-[8%] hidden h-32 w-px bg-[#fffefa]/80 md:block" />
     </section>
@@ -164,7 +162,7 @@ function WorkSection() {
       <div className="site-wrap">
         <div className="mb-12 flex flex-col justify-between gap-5 md:mb-16 md:flex-row md:items-end">
           <div><p className="eyebrow">A beginning, shaped around you</p><h2 className="serif mt-5 text-5xl tracking-[-.03em] md:text-6xl">How we can work together</h2></div>
-          <p className="max-w-[340px] text-sm leading-6 text-[#78685d]">A lasting partnership, a considered experience or a more personal path—choose the scale that feels right.</p>
+          
         </div>
         <div className="space-y-4">
           {offerings.map((item) => (
