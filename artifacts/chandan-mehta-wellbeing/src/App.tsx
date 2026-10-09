@@ -231,10 +231,10 @@ function ApproachSection() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
-              {i === 0 && <img src="/rooted-yogic-practice.png" alt="A green woodland canopy viewed from below" className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply" loading="lazy" />}
+              {i === 0 && <img src="/applied-yogic-science-v2.png" alt="A woman practising pranayama beside a peaceful river" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" />}
               {i === 1 && <><img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover object-[center_bottom] opacity-60 mix-blend-multiply" loading="lazy" width="1200" height="900" /><span className="absolute inset-0 bg-gradient-to-tr from-[#f3ded7] via-[#f3ded7]/10 to-transparent" /><span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#f3ded7]/95 via-[#f3ded7]/45 to-transparent" /></>}
               {i === 2 && <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1200" height="1200" />}
-              {i === 3 && <img src="/coaching-guidance.png" alt="A solitary tree beside still water at dusk" className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply" loading="lazy" />}
+              {i === 3 && <img src="/coaching-guidance-v2.png" alt="Two wooden chairs beneath a mature tree beside an open garden trail" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" />}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
               <div className="relative z-10 flex items-end justify-between gap-3">
                 <h3 className="serif max-w-[270px] text-[2rem] leading-[.98] tracking-[-.015em]">{practice.title}</h3>
