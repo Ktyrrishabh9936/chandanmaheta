@@ -8,28 +8,31 @@ const offerings = [
     number: '01',
     title: 'Strategic Wellbeing Partnership',
     description:
-      'I work with your leadership to build wellbeing into the heart of your organisation or space—not as another programme, but as the way you operate.',
-    note: 'For the Wellbeing, built to last',
+      'I work with your leadership to build wellbeing into the heart of your organisation or space, not as another programme, but as the way you operate.',
+    note: 'For the long view',
     color: '#e3ece2',
-    icon: 'root',
+    image: '/strategic-roots.png',
+    imageAlt: 'The exposed roots of a mature tree in a quiet woodland',
   },
   {
     number: '02',
     title: 'Curated Wellbeing Engagement',
     description:
-      'From a single session to a programme or retreat, shaped around your people. Practical experiences that stay with them long after the session.',
+      'I design and lead wellbeing sessions, programmes and retreats around your people, so they learn practices they can use every day.',
     note: 'For a shared experience',
     color: '#f1dfd6',
-    icon: 'branch',
+    image: '/curated-branches.png',
+    imageAlt: 'Tree branches reaching upward into soft morning light',
   },
   {
     number: '03',
     title: 'Personal Wellbeing Journey',
     description:
-      'Twelve sessions over four months, personally guided and shaped around your life, your pressures and your goals.',
+      'I guide you personally through 12 sessions over four months, shaped around your life, your pressures and your goals.',
     note: 'One-to-one · 4 months',
     color: '#e4ecec',
-    icon: 'apple',
+    image: '/dew-leaf.jpg',
+    imageAlt: 'A fresh green leaf holding drops of morning dew',
   },
 ];
 
@@ -82,7 +85,7 @@ function Header() {
   const nav = [
     ['Who I work with', '#who'],
     ['Work together', '#work'],
-    ['The Approach', '#approach'],
+    ['Rooted Practices', '#approach'],
     ['About', '#about'],
   ];
   return (
@@ -168,9 +171,8 @@ function WorkSection() {
           {offerings.map((item) => (
             <article key={item.number} className="group relative grid min-h-[270px] overflow-hidden rounded-[1.6rem] md:grid-cols-[.72fr_1.28fr]" style={{ backgroundColor: item.color }}>
               <div className="relative flex min-h-[190px] items-center justify-center overflow-hidden md:min-h-[280px]">
-                {item.icon === 'root' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[85%] w-[85%]"><g fill="none" stroke="#557464" strokeWidth="1.25" opacity=".75"><path d="M130 18v82m0-26L94 37m36 34 37-37M130 72 72 63m58 21 76-21m-76 22-43 52m43-44 45 72m-45-80-78 64m78-59 90 57M130 100v103m-48-66-20 45m34-52 4 63m82-48-8 51m23-53 24 29M94 37 64 26m30 11-4-27m77 0-4 23m4-23 29 0M72 63 39 50m33 13-5-32m139 11 25-18m-25 18 4-34"/></g></svg>}
-                {item.icon === 'branch' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[88%] w-[88%]"><g fill="none" stroke="#9c6959" strokeWidth="1.35" opacity=".68"><path d="M125 204c1-45-4-95 9-177m-9 137c-19-27-42-45-72-61m75 29c26-33 45-52 78-73M133 83c-20-21-34-33-56-43m56 25c21-21 36-31 58-41m-66 90c-28-3-50 0-75 11m82-4c30-8 48-6 76 0"/><path d="M72 103c-13-17-28-18-40-13 8 16 21 23 40 13Zm58-22c-3-20 7-31 22-37 4 18-3 31-22 37Zm48-3c8-18 23-23 39-20-5 18-18 27-39 20ZM78 42C66 26 69 12 80 1c11 15 11 28-2 41Zm112-18c1-19 12-29 28-33 0 19-9 30-28 33ZM59 115c-19-10-32-5-42 7 16 10 30 9 42-7Zm161 1c16-14 30-13 43-4-13 14-27 17-43 4Z"/></g></svg>}
-                {item.icon === 'apple' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[86%] w-[86%]"><g fill="none" stroke="#653524" strokeLinecap="round" strokeLinejoin="round" opacity=".56"><path strokeWidth="1.55" d="M132 69c-17-20-42-22-58-8-18 16-20 48-8 78 13 31 34 57 55 57 8 0 12-5 19-5s12 5 20 5c21 0 42-26 55-57 12-30 10-62-8-78-16-14-41-12-58 8-5 6-12 9-17 9s-12-3-17-9Z"/><path strokeWidth="1.8" d="M135 77c-1-27 7-43 24-55"/><path strokeWidth="1.35" d="M148 34c13-17 31-19 46-11-6 17-22 27-46 11Z"/><path strokeWidth="1.1" d="M156 32c10-4 20-6 31-6M89 70c-12 13-17 31-14 51m124-51c12 13 17 31 14 51"/><path strokeWidth=".9" d="M99 185c-14-13-25-30-33-49m98 49c14-13 25-30 33-49"/></g></svg>}
+                <img src={item.image} alt={item.imageAlt} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#503a2e]/10 via-transparent to-transparent" />
                 <span className="absolute left-6 top-6 text-[.65rem] font-semibold tracking-[.18em] text-[#503a2e]/65">{item.number}</span>
               </div>
               <div className="flex flex-col justify-center px-7 py-9 md:px-12 md:py-12">
@@ -223,17 +225,17 @@ function ApproachSection() {
       <div className="site-wrap">
         <div className="grid gap-12 md:grid-cols-[.75fr_1.25fr] md:gap-20">
           <div className="md:sticky md:top-12 md:self-start">
-            <p className="eyebrow">The approach</p>
+            <p className="eyebrow">Rooted Practices</p>
             <h2 className="serif mt-5 text-5xl leading-[.98] tracking-[-.03em] md:text-6xl">Many practices.<br /><em>One whole</em> you.</h2>
             <p className="mt-6 max-w-sm text-sm leading-7 text-[#78685d]">Each practice offers a different way in. Together, they meet the whole person—body, mind and the life around them.</p>
             <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold">Talk about your needs <ArrowRight size={16} /></a>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
-              {i === 0 && <VibrationRings tone="#557464" position="top" />}
+              {i === 0 && <img src="/rooted-yogic-practice.png" alt="A green woodland canopy viewed from below" className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply" loading="lazy" />}
               {i === 1 && <><img src="/nutrition-lifestyle.webp" alt="Fresh fruit, vegetables and herbs arranged for a nourishing meal" className="absolute inset-0 h-full w-full object-cover object-[center_bottom] opacity-60 mix-blend-multiply" loading="lazy" width="1200" height="900" /><span className="absolute inset-0 bg-gradient-to-tr from-[#f3ded7] via-[#f3ded7]/10 to-transparent" /><span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#f3ded7]/95 via-[#f3ded7]/45 to-transparent" /></>}
               {i === 2 && <img src="/signature-meditation.webp" alt="A woman meditating peacefully in a bright, calm room" className="absolute inset-0 h-full w-full object-cover object-center opacity-55 mix-blend-multiply" loading="lazy" width="1200" height="1200" />}
-              {i === 3 && <VibrationRings tone="#496a73" position="bottom" />}
+              {i === 3 && <img src="/coaching-guidance.png" alt="A solitary tree beside still water at dusk" className="absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-multiply" loading="lazy" />}
               <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
               <div className="relative z-10 flex items-end justify-between gap-3">
                 <h3 className="serif max-w-[270px] text-[2rem] leading-[.98] tracking-[-.015em]">{practice.title}</h3>
@@ -377,7 +379,7 @@ function Footer() {
           </div>
           <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm text-[#f1e8da]">
             <a href="#who" className="hover:text-[#ECB538]">Who I work with</a><a href="#work" className="hover:text-[#ECB538]">Work together</a>
-            <a href="#approach" className="hover:text-[#ECB538]">The Approach</a><a href="#about" className="hover:text-[#ECB538]">About</a>
+            <a href="#approach" className="hover:text-[#ECB538]">Rooted Practices</a><a href="#about" className="hover:text-[#ECB538]">About</a>
             <a href="#contact" className="hover:text-[#ECB538]">Get in touch</a><span className="text-[#bdae9c]" aria-disabled="true">Journal · coming soon</span>
             <span className="text-[#bdae9c]" aria-disabled="true">Privacy policy · coming soon</span>
           </nav>
