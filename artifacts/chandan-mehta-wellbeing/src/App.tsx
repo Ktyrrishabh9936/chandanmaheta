@@ -87,12 +87,12 @@ function Header() {
     ['About Me', '#about'],
   ];
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 bg-[#ECB538]/95 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
+    <header className="brand-gradient fixed left-0 right-0 top-0 z-50 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
       <div className="site-wrap flex h-[76px] items-center justify-between gap-6 md:h-[92px]">
         {/* <BrandMark /> */}
         <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="h-10 w-auto shrink-0 object-contain md:h-12" />
         <nav aria-label="Main navigation" className="hidden items-center gap-6 2xl:gap-9 xl:flex">
-          {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-[#653524] font-bold hover:!text-white" href={href}>{label}</a>)}
+          {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-white font-bold hover:!text-[#653524]" href={href}>{label}</a>)}
           <a href="#contact" className="shrink-0 whitespace-nowrap rounded-full border border-white bg-white px-5 py-3 text-[.82rem] font-normal tracking-[.08em] text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in Touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
         <button className="rounded-full border border-[#653524]/40 p-2 text-[#653524] xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
@@ -370,7 +370,7 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#ECB538] py-12 text-[#653524]">
+    <footer className="brand-gradient py-12 text-[#653524]">
       <div className="site-wrap">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
           <div>
