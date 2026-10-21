@@ -82,27 +82,26 @@ function Header() {
   const nav = [
     ['Who I work with', '#who'],
     ['Work together', '#work'],
-    ['Rooted Practices', '#approach'],
+    ['The Practice of Wellbeing', '#approach'],
+    ['TM', '#meditation'],
     ['About', '#about'],
   ];
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-[#ECB538]/95 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
-      <div className="site-wrap flex h-[92px] items-center justify-between">
+      <div className="site-wrap flex h-[76px] items-center justify-between gap-6 md:h-[92px]">
         {/* <BrandMark /> */}
-        <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="hidden h-12 w-auto object-contain md:block" />
-        <nav aria-label="Main navigation" className="hidden items-center gap-8 md:flex">
-          {nav.map(([label, href]) => <a key={label} className="nav-link !text-white font-bold hover:!text-[#503a2e]" href={href}>{label}</a>)}
-          <span className="nav-link cursor-default opacity-60" aria-disabled="true" title="Journal is coming soon">Journal <span className="text-[.6rem]">· SOON</span></span>
-          <a href="#contact" className="rounded-full border border-white bg-white px-5 py-3 text-[.78rem] font-semibold text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
+        <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="h-10 w-auto shrink-0 object-contain md:h-12" />
+        <nav aria-label="Main navigation" className="hidden items-center gap-6 2xl:gap-9 xl:flex">
+          {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-white font-bold hover:!text-[#503a2e]" href={href}>{label}</a>)}
+          <a href="#contact" className="shrink-0 whitespace-nowrap rounded-full border border-white bg-white px-5 py-3 text-[.82rem] font-normal tracking-[.08em] text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
-        <button className="rounded-full border border-white/40 p-2 text-white md:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
+        <button className="rounded-full border border-white/40 p-2 text-white xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 rounded-2xl border border-[#503a2e]/15 bg-[#fffefa] p-5 shadow-lg md:hidden">
+      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 rounded-2xl border border-[#503a2e]/15 bg-[#fffefa] p-5 shadow-lg xl:hidden">
         {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="nav-link py-1">{label}</a>)}
-        <span className="nav-link cursor-default py-1 opacity-60" aria-disabled="true">Journal · coming soon</span>
-        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full bg-[#ECB538] px-5 py-3 text-center text-sm font-semibold">Get in touch</a>
+        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full bg-[#ECB538] px-5 py-3 text-center text-[.95rem] font-normal">Get in touch</a>
       </nav>}
     </header>
   );
@@ -112,16 +111,16 @@ function Hero() {
   return (
     <section id="top" className="relative flex min-h-[740px] items-center overflow-hidden bg-[#ede4d1] py-32 md:min-h-[790px] md:py-36">
       <img src="/wellbeing-garden.jpg" alt="A quiet garden path, warmed by early morning light" className="absolute inset-0 h-full w-full object-cover object-center" width="1800" height="1200" fetchPriority="high" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5 max-md:via-[#f8f6ef]/85 max-md:to-[#f8f6ef]/55" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#4b3425]/10 to-transparent" />
       <div className="site-wrap relative z-10 my-auto">
         <div className="max-w-[700px] mt-[25px]">
           <p className="eyebrow mb-7 reveal">Wellbeing, rooted in real life</p>
-          <h1 className="serif max-w-[680px] text-[clamp(3.6rem,8vw,7.3rem)] leading-[.91] tracking-[-.045em] text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
-          <p className="mt-8 max-w-[465px] text-[1.02rem] leading-7 text-[#67574c] reveal reveal-late">Two decades in corporate India. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
+          <h1 className="h-display max-w-[640px] font-bold text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
+          <p className="subhead mt-7 max-w-[540px] text-[#67574c] reveal reveal-late">Two decades in corporate India. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
           <div className="mt-9 flex flex-wrap items-center gap-5 reveal reveal-late">
-            <a href="#work" className="cta inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold text-[#503a2e]" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
-            <a href="#who" className="inline-flex items-center gap-2 text-sm font-medium text-[#624b3d]">Find your starting point <ArrowDown size={15} /></a>
+            <a href="#work" className="cta inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-[.95rem] font-normal text-[#503a2e]" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
+            <a href="#who" className="inline-flex items-center gap-2 text-[.95rem] text-[#624b3d]">Find your starting point <ArrowDown size={15} /></a>
           </div>
         </div>
         
@@ -138,15 +137,15 @@ function AudienceSection() {
         <div className="grid gap-10 md:grid-cols-[.8fr_1.2fr] md:gap-24">
           <div>
             <p className="eyebrow">A practice for real life</p>
-            <h2 className="serif mt-5 max-w-sm text-5xl leading-[.98] tracking-[-.03em] md:text-6xl">Who I work with</h2>
-            <p className="mt-6 max-w-sm text-[.94rem] leading-7 text-[#78685d]">Wellbeing looks different in every room, workplace and season of life. The work begins by listening.</p>
+            <h2 className="h-section mt-5 max-w-sm">Who I work with</h2>
+            <p className="body-lg mt-6 max-w-sm text-[#78685d]">Wellbeing looks different in every room, workplace and season of life. The work begins by listening.</p>
           </div>
           <div className="grid gap-x-10 sm:grid-cols-2">
             {audiences.map((item) => (
               <article key={item.n} className="border-t border-[#e8e1d5] py-6">
-                <div className="mb-4 flex items-center justify-between"><span className="text-[.65rem] font-semibold tracking-[.17em] text-[#b38b43]">{item.n}</span><span className="h-1.5 w-1.5 rounded-full bg-[#d7b25d]" /></div>
-                <h3 className="serif text-[1.7rem] leading-[1.05]">{item.title}</h3>
-                <p className="mt-3 text-[.85rem] leading-6 text-[#78685d]">{item.copy}</p>
+                <div className="mb-4 flex items-center justify-between"><span className="label text-[#b38b43]">{item.n}</span><span className="h-1.5 w-1.5 rounded-full bg-[#d7b25d]" /></div>
+                <h3 className="h-card">{item.title}</h3>
+                <p className="body-md mt-3 text-[#78685d]">{item.copy}</p>
               </article>
             ))}
           </div>
@@ -161,7 +160,7 @@ function WorkSection() {
     <section id="work" className="bg-[#f8f6ef] py-24 md:py-32">
       <div className="site-wrap">
         <div className="mb-12 flex flex-col justify-between gap-5 md:mb-16 md:flex-row md:items-end">
-          <div><p className="eyebrow">A beginning, shaped around you</p><h2 className="serif mt-5 text-5xl tracking-[-.03em] md:text-6xl">How we can work together</h2></div>
+          <div><p className="eyebrow">A beginning, shaped around you</p><h2 className="h-section mt-5">How we can work together</h2></div>
           
         </div>
         <div className="space-y-4">
@@ -172,20 +171,20 @@ function WorkSection() {
                 {item.icon === 'branch' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[88%] w-[88%]"><g fill="none" stroke="#9c6959" strokeWidth="1.35" opacity=".68"><path d="M125 204c1-45-4-95 9-177m-9 137c-19-27-42-45-72-61m75 29c26-33 45-52 78-73M133 83c-20-21-34-33-56-43m56 25c21-21 36-31 58-41m-66 90c-28-3-50 0-75 11m82-4c30-8 48-6 76 0"/><path d="M72 103c-13-17-28-18-40-13 8 16 21 23 40 13Zm58-22c-3-20 7-31 22-37 4 18-3 31-22 37Zm48-3c8-18 23-23 39-20-5 18-18 27-39 20ZM78 42C66 26 69 12 80 1c11 15 11 28-2 41Zm112-18c1-19 12-29 28-33 0 19-9 30-28 33ZM59 115c-19-10-32-5-42 7 16 10 30 9 42-7Zm161 1c16-14 30-13 43-4-13 14-27 17-43 4Z"/></g></svg>}
                 {item.icon === 'apple' && <svg aria-hidden="true" viewBox="0 0 260 220" className="h-[86%] w-[86%]"><g fill="none" stroke="#653524" strokeLinecap="round" strokeLinejoin="round" opacity=".56"><path strokeWidth="1.55" d="M132 69c-17-20-42-22-58-8-18 16-20 48-8 78 13 31 34 57 55 57 8 0 12-5 19-5s12 5 20 5c21 0 42-26 55-57 12-30 10-62-8-78-16-14-41-12-58 8-5 6-12 9-17 9s-12-3-17-9Z"/><path strokeWidth="1.8" d="M135 77c-1-27 7-43 24-55"/><path strokeWidth="1.35" d="M148 34c13-17 31-19 46-11-6 17-22 27-46 11Z"/><path strokeWidth="1.1" d="M156 32c10-4 20-6 31-6M89 70c-12 13-17 31-14 51m124-51c12 13 17 31 14 51"/><path strokeWidth=".9" d="M99 185c-14-13-25-30-33-49m98 49c14-13 25-30 33-49"/></g></svg>}
                 <span className="absolute inset-0 bg-gradient-to-r from-[#503a2e]/10 via-transparent to-transparent" />
-                <span className="absolute left-6 top-6 text-[.65rem] font-semibold tracking-[.18em] text-[#503a2e]/65">{item.number}</span>
+                <span className="label absolute left-6 top-6 text-[#503a2e]/65">{item.number}</span>
               </div>
               <div className="flex flex-col justify-center px-7 py-9 md:px-12 md:py-12">
                 <p className="eyebrow !text-[#806c52]">{item.note}</p>
-                <h3 className="serif mt-3 max-w-[520px] text-4xl leading-[.98] tracking-[-.02em] md:text-5xl">{item.title}</h3>
-                <p className="mt-5 max-w-[510px] text-sm leading-6 text-[#6b5b50]">{item.description}</p>
-                <a href="#contact" className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold" data-testid={`link-${item.number}-enquiry`}>Start a conversation <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a>
+                <h3 className="h-card mt-3 max-w-[520px] md:!text-[2.25rem]">{item.title}</h3>
+                <p className="body-md mt-5 max-w-[540px] text-[#6b5b50]">{item.description}</p>
+                <a href="#contact" className="mt-6 inline-flex w-fit items-center gap-2 text-[.95rem] font-normal" data-testid={`link-${item.number}-enquiry`}>Start a conversation <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" /></a>
               </div>
             </article>
           ))}
         </div>
-        <div className="mt-10 flex flex-col gap-5 border-t border-[#e8e1d5] pt-7 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-5 border-t border-[#e8e1d5] pt-7  md:items-center md:justify-between">
           <p className="eyebrow">A thoughtful process, from first conversation to everyday practice</p>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-[.62rem] font-semibold uppercase tracking-[.12em] text-[#78685d]">
+          <div className="label flex flex-wrap gap-x-4 gap-y-2 text-[#78685d]">
             {['Understand', 'Architect', 'Curate', 'Implement', 'Integrate', 'Evolve'].map((step, i) => <span key={step} className="flex items-center gap-3">{i > 0 && <span className="text-[#c9bcae]">—</span>}{step}</span>)}
           </div>
         </div>
@@ -224,10 +223,10 @@ function ApproachSection() {
       <div className="site-wrap">
         <div className="grid gap-12 md:grid-cols-[.75fr_1.25fr] md:gap-20">
           <div className="md:sticky md:top-12 md:self-start">
-            <p className="eyebrow">Rooted Practices</p>
-            <h2 className="serif mt-5 text-5xl leading-[.98] tracking-[-.03em] md:text-6xl">Many practices.<br /><em>One whole</em> you.</h2>
-            <p className="mt-6 max-w-sm text-sm leading-7 text-[#78685d]">Each practice offers a different way in. Together, they meet the whole person—body, mind and the life around them.</p>
-            <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold">Talk about your needs <ArrowRight size={16} /></a>
+            <p className="eyebrow">The Practices</p>
+            <h2 className="h-section mt-5">Many practices.<br /><em>One whole</em> you.</h2>
+            <p className="body-lg mt-6 max-w-sm text-[#78685d]">Each practice offers a different way in. Together, they meet the whole person—body, mind and the life around them.</p>
+            <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-[.95rem] font-normal">Talk about your needs <ArrowRight size={16} /></a>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {practices.map((practice, i) => <article key={practice.title} className="group relative flex min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.4rem] p-7 md:min-h-[310px] md:p-8" style={{ backgroundColor: practice.tone }}>
@@ -239,15 +238,15 @@ function ApproachSection() {
                 <span className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#eef0df]/55 to-transparent" />
                 <span className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#dfe9d5]/55 to-transparent" />
               </>}
-              <span className="relative z-10 text-[.66rem] font-semibold tracking-[.18em] text-[#503a2e]/65">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
+              <span className="label relative z-10 text-[#503a2e]/75">0{i + 1} <span className="mx-2">/</span> {practice.association}</span>
               <div className="relative z-10 flex items-end justify-between gap-3">
-                <h3 className="serif max-w-[270px] text-[2rem] leading-[.98] tracking-[-.015em]">{practice.title}</h3>
+                <h3 className="h-card max-w-[280px]">{practice.title}</h3>
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#503a2e]/20 transition-colors group-hover:bg-[#fffefa]/50"><ArrowUpRight size={17} /></span>
               </div>
             </article>)}
           </div>
         </div>
-        <p className="mt-8 text-xs text-[#78685d]">Practice experience and affiliations include Kaivalyadhama, BFY and Jack Canfield.</p>
+        <p className="mt-8 text-[.9rem] text-[#78685d]">Practice experience and affiliations include Kaivalyadhama, BFY and Jack Canfield.</p>
       </div>
     </section>
   );
@@ -260,8 +259,8 @@ function MeditationSection() {
       <div className="site-wrap relative grid items-center gap-10 md:grid-cols-[1fr_.75fr] md:gap-20">
         <div>
           <p className="eyebrow">A signature practice</p>
-          <h2 className="serif mt-6 max-w-[700px] text-[clamp(3.6rem,7vw,6.8rem)] leading-[.88] tracking-[-.04em]">You do not need to empty your mind.</h2>
-          <p className="mt-7 max-w-[510px] text-base leading-7 text-[#5f675f]">Transcendental Meditation is effortless. A simple, natural practice that fits into the life you already have.</p>
+          <h2 className="h-display mt-6 max-w-[640px]">You do not need to empty your mind.</h2>
+          <p className="subhead mt-7 max-w-[540px] text-[#5f675f]">Transcendental Meditation is effortless. A simple, natural practice that fits into the life you already have.</p>
           <div className="mt-9 grid max-w-[560px] grid-cols-2 gap-x-7 gap-y-5 border-t border-[#697667]/25 pt-6 sm:grid-cols-4">
             {[
               ['10M+', 'people learned TM'],
@@ -270,25 +269,25 @@ function MeditationSection() {
               ['50+', 'years of study'],
             ].map(([value, label]) => (
               <div key={label}>
-                <p className="serif text-3xl leading-none">{value}</p>
-                <p className="mt-2 text-[.65rem] leading-4 text-[#626a5f]">{label}</p>
+                <p className="serif text-[2rem] leading-none">{value}</p>
+                <p className="mt-2 text-[.85rem] leading-5 text-[#626a5f]">{label}</p>
               </div>
             ))}
           </div>
-          <a href="#contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold text-[#503a2e]">Ask about learning TM <ArrowRight size={16} /></a>
+          <a href="#contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-[.95rem] font-normal text-[#503a2e]">Ask about learning TM <ArrowRight size={16} /></a>
         </div>
         <div className="relative mx-auto flex aspect-square w-full max-w-[390px] items-center justify-center rounded-full bg-[#e6c662]/40">
           <div className="absolute h-[82%] w-[82%] rounded-full border border-[#8a835a]/35" />
           <div className="absolute h-[62%] w-[62%] rounded-full border border-[#8a835a]/35" />
           <div className="absolute h-[42%] w-[42%] rounded-full border border-[#8a835a]/35" />
           <div className="relative text-center">
-            <span className="serif block text-[6.8rem] leading-none">20</span>
-            <span className="mt-1 block text-[.7rem] font-semibold uppercase tracking-[.2em]">minutes</span>
-            <span className="mt-3 block text-sm text-[#6b6047]">twice a day</span>
+            <span className="serif block text-[5.5rem] leading-none">20</span>
+            <span className="label mt-1 block">minutes</span>
+            <span className="mt-2 block text-[.95rem] text-[#6b6047]">twice a day</span>
           </div>
-          <span className="absolute right-[-4%] top-[14%] rounded-full bg-[#fffefa]/80 px-4 py-2 text-[.65rem] font-semibold uppercase tracking-[.13em]">No empty mind required</span>
+          <span className="absolute right-[-4%] top-[14%] rounded-full bg-[#fffefa]/80 px-4 py-2 text-[.72rem] uppercase tracking-[.13em]">No empty mind required</span>
         </div>
-        <div className="md:col-span-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#697667]/25 pt-5 text-[.68rem] uppercase tracking-[.14em] text-[#626a5f]">
+        <div className="md:col-span-2 flex flex-wrap gap-x-8 gap-y-3 border-t border-[#697667]/25 pt-5 text-[.78rem] uppercase tracking-[.14em] text-[#626a5f]">
           <span>Personal instruction</span><span>Certified teacher</span><span>Maharashtra, India</span><span>Learn at your own pace</span>
         </div>
       </div>
@@ -303,18 +302,18 @@ function AboutSection() {
         <div className="relative min-h-[390px] overflow-hidden rounded-[48%_48%_1.5rem_1.5rem] bg-[#e5d9c8] md:min-h-[520px]">
           <img src="/wellbeing-garden.jpg" alt="Sun filtering through a peaceful garden" className="absolute inset-0 h-full w-full object-cover object-[60%_center]" loading="lazy" width="1800" height="1200" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#553f30]/30 via-transparent to-[#fffefa]/5" />
-          <div className="absolute bottom-7 left-7 rounded-full bg-[#fffefa]/85 px-5 py-3 text-xs font-medium text-[#503a2e]">A practice grounded in life, not away from it</div>
+          <div className="absolute bottom-7 left-7 rounded-full bg-[#fffefa]/85 px-5 py-3 text-[.85rem] text-[#503a2e]">A practice grounded in life, not away from it</div>
         </div>
         <div className="py-4">
           <p className="eyebrow">A little about me</p>
-          <h2 className="serif mt-5 text-5xl leading-[.96] tracking-[-.03em] md:text-6xl">Wellbeing is not a detour from life.</h2>
-          <p className="mt-7 text-base leading-7 text-[#6d5d50]">It is how we meet it. My work brings together two decades in corporate India and a lifelong yogic practice—with care for the realities of people, teams and the places they share.</p>
-          <p className="mt-4 text-base leading-7 text-[#6d5d50]">As a certified female TM teacher in Maharashtra, I also guide people into a simple daily practice that can become a steady anchor.</p>
-          <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold">A conversation is a good place to start <ArrowRight size={16} /></a>
+          <h2 className="h-section mt-5">Wellbeing is not a detour from life.</h2>
+          <p className="body-lg mt-7 text-[#6d5d50]">It is how we meet it. My work brings together two decades in corporate India and a lifelong yogic practice—with care for the realities of people, teams and the places they share.</p>
+          <p className="body-lg mt-4 text-[#6d5d50]">As a certified female TM teacher in Maharashtra, I also guide people into a simple daily practice that can become a steady anchor.</p>
+          <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-[.95rem] font-normal">A conversation is a good place to start <ArrowRight size={16} /></a>
           <blockquote className="mt-12 border-l-2 border-[#ECB538] pl-6">
             <p className="eyebrow">In good company</p>
-            <p className="serif mt-3 text-3xl">Knight Frank India</p>
-            <footer className="mt-2 text-xs text-[#78685d]">Testimonial reference · words to be added with approval</footer>
+            <p className="serif mt-3 text-[1.75rem]">Knight Frank India</p>
+            <footer className="mt-2 text-[.85rem] text-[#78685d]">Testimonial reference · words to be added with approval</footer>
           </blockquote>
         </div>
       </div>
@@ -346,23 +345,23 @@ function ContactSection() {
       <div className="site-wrap grid gap-12 md:grid-cols-[.85fr_1.15fr] md:gap-24">
         <div>
           <p className="eyebrow">Let's talk</p>
-          <h2 className="serif mt-5 max-w-md text-6xl leading-[.92] tracking-[-.04em] md:text-7xl">A steadier life can start here.</h2>
-          <p className="mt-7 max-w-sm text-sm leading-7 text-[#78685d]">Tell me what you are looking for. We can start with a simple, no-pressure conversation.</p>
+          <h2 className="h-section mt-5 max-w-md">A steadier life can start here.</h2>
+          <p className="body-lg mt-7 max-w-sm text-[#78685d]">Tell me what you are looking for. We can start with a simple, no-pressure conversation.</p>
           <div className="mt-10 border-t border-[#e8e1d5] pt-5">
-            <p className="eyebrow">Based in</p><p className="mt-2 text-sm">Mumbai, India · working across Maharashtra</p>
+            <p className="eyebrow">Based in</p><p className="mt-2 text-[1rem]">Mumbai, India · working across Maharashtra</p>
           </div>
         </div>
         <form onSubmit={handleSubmit} className="rounded-[1.5rem] bg-[#f8f6ef] p-6 md:p-10">
           <div className="grid gap-5 sm:grid-cols-2">
-            <label className="text-xs font-semibold">Your name<input required name="name" autoComplete="name" placeholder="How should I address you?" className="mt-2 w-full rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-sm font-normal outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-name" /></label>
-            <label className="text-xs font-semibold">Email address<input required type="email" name="email" autoComplete="email" placeholder="you@example.com" className="mt-2 w-full rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-sm font-normal outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-email" /></label>
-            <label className="text-xs font-semibold sm:col-span-2">Mobile <span className="font-normal text-[#938477]">(optional)</span><input type="tel" name="mobile" autoComplete="tel" placeholder="+91" className="mt-2 w-full rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-sm font-normal outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-mobile" /></label>
-            <label className="text-xs font-semibold sm:col-span-2">What would you like to explore?<textarea required name="message" rows={4} placeholder="A little about what brings you here..." className="mt-2 w-full resize-y rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-sm font-normal outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-message" /></label>
+            <label className="text-[.9rem] font-normal">Your name<input required name="name" autoComplete="name" placeholder="How should I address you?" className="mt-2 w-full rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-[1rem] font-light outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-name" /></label>
+            <label className="text-[.9rem] font-normal">Email address<input required type="email" name="email" autoComplete="email" placeholder="you@example.com" className="mt-2 w-full rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-[1rem] font-light outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-email" /></label>
+            <label className="text-[.9rem] font-normal sm:col-span-2">Mobile <span className="font-normal text-[#938477]">(optional)</span><input type="tel" name="mobile" autoComplete="tel" placeholder="+91" className="mt-2 w-full rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-[1rem] font-light outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-mobile" /></label>
+            <label className="text-[.9rem] font-normal sm:col-span-2">What would you like to explore?<textarea required name="message" rows={4} placeholder="A little about what brings you here..." className="mt-2 w-full resize-y rounded-xl border border-[#e4dccf] bg-[#fffefa] px-4 py-3.5 text-[1rem] font-light outline-none transition focus:border-[#c09539] focus:ring-2 focus:ring-[#ecb538]/20" data-testid="input-contact-message" /></label>
           </div>
-          {error && <p role="alert" className="mt-4 text-sm text-[#a44435]" data-testid="status-contact-error">{error}</p>}
-          {sent && <p role="status" className="mt-4 text-sm text-[#4e745a]" data-testid="status-contact-sent">Your email app should open with your enquiry prepared. Add Chandan’s email address before sending. Thank you for reaching out.</p>}
-          <button type="submit" className="cta mt-6 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-sm font-semibold" data-testid="button-send-enquiry">Prepare enquiry email <ArrowRight size={16} /></button>
-          <p className="mt-4 text-[.68rem] leading-5 text-[#8b7a6b]">This opens a draft in your email app. Chandan’s email address will be added here before the site launches.</p>
+          {error && <p role="alert" className="mt-4 text-[.95rem] text-[#a44435]" data-testid="status-contact-error">{error}</p>}
+          {sent && <p role="status" className="mt-4 text-[.95rem] text-[#4e745a]" data-testid="status-contact-sent">Your email app should open with your enquiry prepared. Add Chandan’s email address before sending. Thank you for reaching out.</p>}
+          <button type="submit" className="cta mt-6 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-[.95rem] font-normal" data-testid="button-send-enquiry">Prepare enquiry email <ArrowRight size={16} /></button>
+          <p className="mt-4 text-[.82rem] leading-6 text-[#8b7a6b]">This opens a draft in your email app. Chandan’s email address will be added here before the site launches.</p>
         </form>
       </div>
     </section>
@@ -378,19 +377,20 @@ function Footer() {
             <img src="/chandan-logo-stacked.png" alt="Chandan Mehta Wellbeing" className="mb-5 h-24 w-auto object-contain object-left" />
             {/* <a href="#top" className="serif text-3xl" data-testid="link-footer-home">Chandan Mehta</a>
             <p className="mt-1 text-[.62rem] uppercase tracking-[.26em] text-[#e4c77e]">Wellbeing</p> */}
-            <p className="mt-5 text-xs text-[#ded1c0]">Mumbai, India</p>
+            <p className="mt-5 text-[.9rem] text-[#ded1c0]">Mumbai, India</p>
           </div>
-          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm text-[#f1e8da]">
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-12 gap-y-4 text-[.95rem] text-[#f1e8da]">
             <a href="#who" className="hover:text-[#ECB538]">Who I work with</a><a href="#work" className="hover:text-[#ECB538]">Work together</a>
-            <a href="#approach" className="hover:text-[#ECB538]">Rooted Practices</a><a href="#about" className="hover:text-[#ECB538]">About</a>
-            <a href="#contact" className="hover:text-[#ECB538]">Get in touch</a><span className="text-[#bdae9c]" aria-disabled="true">Journal · coming soon</span>
+            <a href="#approach" className="hover:text-[#ECB538]">The Practices</a><a href="#meditation" className="hover:text-[#ECB538]">TM</a>
+            <a href="#about" className="hover:text-[#ECB538]">About</a>
+            <a href="#contact" className="hover:text-[#ECB538]">Get in touch</a>
             <span className="text-[#bdae9c]" aria-disabled="true">Privacy policy · coming soon</span>
           </nav>
-          <span className="inline-flex items-center gap-2 text-sm text-[#f1e8da]" aria-label="LinkedIn profile link to be added">LinkedIn profile to be added <ArrowUpRight size={15} /></span>
+          <span className="inline-flex items-center gap-2 text-[.95rem] text-[#f1e8da]" aria-label="LinkedIn profile link to be added">LinkedIn profile to be added <ArrowUpRight size={15} /></span>
         </div>
         <div className="mt-12 border-t border-[#f8f3e9]/20 pt-6">
-          <p className="max-w-4xl text-[.68rem] leading-5 text-[#d8cbbb]"><strong className="font-semibold text-[#f1e8da]">Wellbeing disclaimer.</strong> Information on this website is for general wellbeing and educational purposes only. It is not medical advice, diagnosis or treatment, and is not a substitute for care from a qualified health professional. Please consult your healthcare provider about individual health concerns.</p>
-          <div className="mt-6 flex flex-col justify-between gap-3 text-[.66rem] text-[#bdae9c] sm:flex-row"><span>© {new Date().getFullYear()} Chandan Mehta Wellbeing</span><span>Made for a fuller life.</span></div>
+          <p className="max-w-4xl text-[.82rem] leading-6 text-[#d8cbbb]"><strong className="font-semibold text-[#f1e8da]">Wellbeing disclaimer.</strong> Information on this website is for general wellbeing and educational purposes only. It is not medical advice, diagnosis or treatment, and is not a substitute for care from a qualified health professional. Please consult your healthcare provider about individual health concerns.</p>
+          <div className="mt-6 flex flex-col justify-between gap-3 text-[.8rem] text-[#bdae9c] sm:flex-row"><span>© {new Date().getFullYear()} Chandan Mehta Wellbeing</span><span>Made for a fuller life.</span></div>
         </div>
       </div>
     </footer>

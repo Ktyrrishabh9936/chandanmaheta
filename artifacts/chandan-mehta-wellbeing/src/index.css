@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 @import 'tailwindcss' source(none);
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -58,9 +58,9 @@
   --chart-3: 8 53% 69%;
   --chart-4: 22 31% 40%;
   --chart-5: 65 27% 71%;
-  --app-font-sans: 'DM Sans', sans-serif;
-  --app-font-serif: 'Instrument Serif', serif;
-  --app-font-mono: 'DM Sans', sans-serif;
+  --app-font-sans: 'Merriweather', Georgia, serif;
+  --app-font-serif: 'Playfair Display', Georgia, serif;
+  --app-font-mono: 'Merriweather', Georgia, serif;
   --radius: .75rem;
   --paper: #f8f6ef;
   --white: #fffefa;
@@ -103,12 +103,23 @@
   body { @apply font-sans antialiased bg-background text-foreground; }
 }
 html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: var(--app-font-sans); }
+body { background: var(--paper); color: var(--ink); font-family: var(--app-font-sans); font-weight: 300; font-size: 1.0625rem; line-height: 1.8; }
 ::selection { background: #ecb538; color: #503a2e; }
-.serif { font-family: var(--app-font-serif); font-weight: 400; }
-.eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .19em; font-weight: 700; color: #9b7953; }
+strong, b { font-weight: 700; }
+
+/* Typography: Playfair Display for headings, Merriweather for subheadings and body */
+.serif { font-family: var(--app-font-serif); font-weight: 400; letter-spacing: -.01em; }
+.serif em { font-style: italic; }
+.h-display { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 4.25rem); line-height: 1.1; letter-spacing: -.01em; }
+.h-section { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.15; letter-spacing: -.01em; }
+.h-card { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2rem); line-height: 1.2; }
+.subhead { font-family: var(--app-font-sans); font-weight: 400; font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.6; }
+.body-lg { font-family: var(--app-font-sans); font-weight: 300; font-size: clamp(1.05rem, 1.3vw, 1.125rem); line-height: 1.85; }
+.body-md { font-family: var(--app-font-sans); font-weight: 300; font-size: 1rem; line-height: 1.8; }
+.label { font-family: var(--app-font-sans); font-size: .78rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; }
+.eyebrow { font-family: var(--app-font-sans); font-size: .8rem; text-transform: uppercase; letter-spacing: .2em; font-weight: 400; line-height: 1.6; color: #9b7953; }
 .site-wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
-.nav-link { color: #653524; font-size: .82rem; transition: color .2s ease; }
+.nav-link { color: #653524; font-size: .82rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; transition: color .2s ease; }
 .nav-link:hover { color: #4b2419; }
 .cta { transition: transform .25s ease, background-color .25s ease; }
 .cta:hover { transform: translateY(-2px); background-color: #dca51d; }
