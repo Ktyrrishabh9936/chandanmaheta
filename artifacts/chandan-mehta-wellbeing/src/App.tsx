@@ -80,11 +80,11 @@ function BrandMark() {
 function Header() {
   const [open, setOpen] = useState(false);
   const nav = [
-    ['Who I work with', '#who'],
-    ['Work together', '#work'],
-    ['The Practice of Wellbeing', '#approach'],
+    ['Who I Work With', '#who'],
+    ['Work Together', '#work'],
+    ['My Approach', '#approach'],
     ['TM', '#meditation'],
-    ['About', '#about'],
+    ['About Me', '#about'],
   ];
   return (
     <header className="fixed left-0 right-0 top-0 z-50 bg-[#ECB538]/95 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
@@ -92,16 +92,16 @@ function Header() {
         {/* <BrandMark /> */}
         <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="h-10 w-auto shrink-0 object-contain md:h-12" />
         <nav aria-label="Main navigation" className="hidden items-center gap-6 2xl:gap-9 xl:flex">
-          {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-white font-bold hover:!text-[#503a2e]" href={href}>{label}</a>)}
-          <a href="#contact" className="shrink-0 whitespace-nowrap rounded-full border border-white bg-white px-5 py-3 text-[.82rem] font-normal tracking-[.08em] text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
+          {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-[#653524] font-bold hover:!text-white" href={href}>{label}</a>)}
+          <a href="#contact" className="shrink-0 whitespace-nowrap rounded-full border border-white bg-white px-5 py-3 text-[.82rem] font-normal tracking-[.08em] text-[#653524] transition-colors hover:border-[#653524] hover:bg-[#653524] hover:text-white" data-testid="link-contact-nav">Get in Touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
-        <button className="rounded-full border border-white/40 p-2 text-white xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
+        <button className="rounded-full border border-[#653524]/40 p-2 text-[#653524] xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
       {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 rounded-2xl border border-[#503a2e]/15 bg-[#fffefa] p-5 shadow-lg xl:hidden">
         {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="nav-link py-1">{label}</a>)}
-        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full bg-[#ECB538] px-5 py-3 text-center text-[.95rem] font-normal">Get in touch</a>
+        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full bg-[#ECB538] px-5 py-3 text-center text-[.95rem] font-normal">Get in Touch</a>
       </nav>}
     </header>
   );
@@ -110,7 +110,7 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="relative flex min-h-[740px] items-center overflow-hidden bg-[#ede4d1] py-32 md:min-h-[790px] md:py-36">
-      <img src="/wellbeing-garden.jpg" alt="A quiet garden path, warmed by early morning light" className="absolute inset-0 h-full w-full object-cover object-center" width="1800" height="1200" fetchPriority="high" />
+      <img src="/hero.webp" alt="A quiet garden path, warmed by early morning light" className="absolute inset-0 h-full w-full object-cover object-center" width="1800" height="1200" fetchPriority="high" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5 max-md:via-[#f8f6ef]/85 max-md:to-[#f8f6ef]/55" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#4b3425]/10 to-transparent" />
       <div className="site-wrap relative z-10 my-auto">
@@ -223,7 +223,7 @@ function ApproachSection() {
       <div className="site-wrap">
         <div className="grid gap-12 md:grid-cols-[.75fr_1.25fr] md:gap-20">
           <div className="md:sticky md:top-12 md:self-start">
-            <p className="eyebrow">The Practices</p>
+            <p className="eyebrow">My Approach</p>
             <h2 className="h-section mt-5">Many practices.<br /><em>One whole</em> you.</h2>
             <p className="body-lg mt-6 max-w-sm text-[#78685d]">Each practice offers a different way in. Together, they meet the whole person—body, mind and the life around them.</p>
             <a href="#contact" className="mt-7 inline-flex items-center gap-2 text-[.95rem] font-normal">Talk about your needs <ArrowRight size={16} /></a>
@@ -370,27 +370,27 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#653524] py-12 text-[#f8f3e9]">
+    <footer className="bg-[#ECB538] py-12 text-[#653524]">
       <div className="site-wrap">
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
           <div>
             <img src="/chandan-logo-stacked.png" alt="Chandan Mehta Wellbeing" className="mb-5 h-24 w-auto object-contain object-left" />
             {/* <a href="#top" className="serif text-3xl" data-testid="link-footer-home">Chandan Mehta</a>
             <p className="mt-1 text-[.62rem] uppercase tracking-[.26em] text-[#e4c77e]">Wellbeing</p> */}
-            <p className="mt-5 text-[.9rem] text-[#ded1c0]">Mumbai, India</p>
+            <p className="mt-5 text-[.9rem] text-[#653524]">Mumbai, India</p>
           </div>
-          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-12 gap-y-4 text-[.95rem] text-[#f1e8da]">
-            <a href="#who" className="hover:text-[#ECB538]">Who I work with</a><a href="#work" className="hover:text-[#ECB538]">Work together</a>
-            <a href="#approach" className="hover:text-[#ECB538]">The Practices</a><a href="#meditation" className="hover:text-[#ECB538]">TM</a>
-            <a href="#about" className="hover:text-[#ECB538]">About</a>
-            <a href="#contact" className="hover:text-[#ECB538]">Get in touch</a>
-            <span className="text-[#bdae9c]" aria-disabled="true">Privacy policy · coming soon</span>
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-12 gap-y-4 text-[.95rem] text-[#653524]">
+            <a href="#who" className="hover:text-white">Who I Work With</a><a href="#work" className="hover:text-white">Work Together</a>
+            <a href="#approach" className="hover:text-white">My Approach</a><a href="#meditation" className="hover:text-white">TM</a>
+            <a href="#about" className="hover:text-white">About Me</a>
+            <a href="#contact" className="hover:text-white">Get in Touch</a>
+            <span className="text-[#7b4b24]" aria-disabled="true">Privacy policy · coming soon</span>
           </nav>
-          <span className="inline-flex items-center gap-2 text-[.95rem] text-[#f1e8da]" aria-label="LinkedIn profile link to be added">LinkedIn profile to be added <ArrowUpRight size={15} /></span>
+          <span className="inline-flex items-center gap-2 text-[.95rem] text-[#653524]" aria-label="LinkedIn profile link to be added">LinkedIn profile to be added <ArrowUpRight size={15} /></span>
         </div>
-        <div className="mt-12 border-t border-[#f8f3e9]/20 pt-6">
-          <p className="max-w-4xl text-[.82rem] leading-6 text-[#d8cbbb]"><strong className="font-semibold text-[#f1e8da]">Wellbeing disclaimer.</strong> Information on this website is for general wellbeing and educational purposes only. It is not medical advice, diagnosis or treatment, and is not a substitute for care from a qualified health professional. Please consult your healthcare provider about individual health concerns.</p>
-          <div className="mt-6 flex flex-col justify-between gap-3 text-[.8rem] text-[#bdae9c] sm:flex-row"><span>© {new Date().getFullYear()} Chandan Mehta Wellbeing</span><span>Made for a fuller life.</span></div>
+        <div className="mt-12 border-t border-[#653524]/20 pt-6">
+          <p className="max-w-4xl text-[.82rem] leading-6 text-[#7b4b24]"><strong className="font-semibold text-[#653524]">Wellbeing disclaimer.</strong> Information on this website is for general wellbeing and educational purposes only. It is not medical advice, diagnosis or treatment, and is not a substitute for care from a qualified health professional. Please consult your healthcare provider about individual health concerns.</p>
+          <div className="mt-6 flex flex-col justify-between gap-3 text-[.8rem] text-[#7b4b24] sm:flex-row"><span>© {new Date().getFullYear()} Chandan Mehta Wellbeing</span><span>Made for a fuller life.</span></div>
         </div>
       </div>
     </footer>
