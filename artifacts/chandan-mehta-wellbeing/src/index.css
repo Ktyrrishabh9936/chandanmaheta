@@ -122,8 +122,8 @@ strong, b { font-weight: 700; }
 .site-wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
 .nav-link { color: #653524; font-size: .82rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; transition: color .2s ease; }
 .nav-link:hover { color: #4b2419; }
-.cta { transition: transform .25s ease, background-color .25s ease; }
-.cta:hover { transform: translateY(-2px); background-color: #dca51d; }
+.cta { transition: transform .25s ease, filter .25s ease; }
+.cta:hover { transform: translateY(-2px); filter: brightness(.93); }
 .reveal { animation: rise-in .8s cubic-bezier(.2,.7,.2,1) both; }
 .reveal-delay { animation-delay: .16s; }
 .reveal-late { animation-delay: .3s; }

@@ -95,13 +95,13 @@ function Header() {
           {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-white font-bold hover:!text-[#653524]" href={href}>{label}</a>)}
           <a href="#contact" className="shrink-0 whitespace-nowrap rounded-full border border-white bg-transparent px-5 py-3 text-[.82rem] font-normal tracking-[.08em] text-white transition-colors hover:border-white hover:bg-white hover:text-[#653524]" data-testid="link-contact-nav">Get in Touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
-        <button className="rounded-full border border-[#653524]/40 p-2 text-[#653524] xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
+        <button className="rounded-full border border-white/50 p-2 text-white xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 rounded-2xl border border-[#503a2e]/15 bg-[#fffefa] p-5 shadow-lg xl:hidden">
-        {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="nav-link py-1">{label}</a>)}
-        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full bg-[#ECB538] px-5 py-3 text-center text-[.95rem] font-normal">Get in Touch</a>
+      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 bg-transparent px-5 pb-6 pt-3 xl:hidden">
+        {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="nav-link py-1 !text-white hover:!text-[#653524]">{label}</a>)}
+        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full border border-white bg-transparent px-5 py-3 text-center text-[.95rem] font-normal text-white transition-colors hover:bg-white hover:text-[#653524]">Get in Touch</a>
       </nav>}
     </header>
   );
@@ -119,7 +119,7 @@ function Hero() {
           <h1 className="h-display max-w-[640px] font-bold text-[#503a2e] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
           <p className="subhead mt-7 max-w-[540px] text-[#67574c] reveal reveal-late">Two decades in corporate India. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
           <div className="mt-9 flex flex-wrap items-center gap-5 reveal reveal-late">
-            <a href="#work" className="cta inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-[.95rem] font-normal text-[#503a2e]" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
+            <a href="#work" className="cta brand-gradient inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.95rem] font-normal text-white" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
             <a href="#who" className="inline-flex items-center gap-2 text-[.95rem] text-[#624b3d]">Find your starting point <ArrowDown size={15} /></a>
           </div>
         </div>
@@ -274,7 +274,7 @@ function MeditationSection() {
               </div>
             ))}
           </div>
-          <a href="#contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-[.95rem] font-normal text-[#503a2e]">Ask about learning TM <ArrowRight size={16} /></a>
+          <a href="#contact" className="cta brand-gradient mt-8 inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.95rem] font-normal text-white">Ask about learning TM <ArrowRight size={16} /></a>
         </div>
         <div className="relative mx-auto flex aspect-square w-full max-w-[390px] items-center justify-center rounded-full bg-[#e6c662]/40">
           <div className="absolute h-[82%] w-[82%] rounded-full border border-[#8a835a]/35" />
@@ -360,7 +360,7 @@ function ContactSection() {
           </div>
           {error && <p role="alert" className="mt-4 text-[.95rem] text-[#a44435]" data-testid="status-contact-error">{error}</p>}
           {sent && <p role="status" className="mt-4 text-[.95rem] text-[#4e745a]" data-testid="status-contact-sent">Your email app should open with your enquiry prepared. Add Chandan’s email address before sending. Thank you for reaching out.</p>}
-          <button type="submit" className="cta mt-6 inline-flex items-center gap-3 rounded-full bg-[#ECB538] px-6 py-4 text-[.95rem] font-normal" data-testid="button-send-enquiry">Prepare enquiry email <ArrowRight size={16} /></button>
+          <button type="submit" className="cta brand-gradient mt-6 inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.95rem] font-normal text-white" data-testid="button-send-enquiry">Prepare enquiry email <ArrowRight size={16} /></button>
           <p className="mt-4 text-[.82rem] leading-6 text-[#8b7a6b]">This opens a draft in your email app. Chandan’s email address will be added here before the site launches.</p>
         </form>
       </div>
