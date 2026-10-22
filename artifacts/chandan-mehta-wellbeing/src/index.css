@@ -64,8 +64,8 @@
   --radius: .75rem;
   --paper: #f8f6ef;
   --white: #fffefa;
-  --ink: #503a2e;
-  --muted-ink: #78685d;
+  --ink: #6b3a26;
+  --muted-ink: #6b3a26;
   --mustard: #ecb538;
   --sage: #dce9df;
   --rose: #f4d7d1;
@@ -104,24 +104,24 @@
 }
 html { scroll-behavior: smooth; }
 body { background: var(--paper); color: var(--ink); font-family: var(--app-font-sans); font-weight: 300; font-size: 1.0625rem; line-height: 1.8; }
-::selection { background: #ecb538; color: #503a2e; }
+::selection { background: #ecb538; color: #6b3a26; }
 strong, b { font-weight: 700; }
 
 /* Typography: Playfair Display for headings, Merriweather for subheadings and body */
 .serif { font-family: var(--app-font-serif); font-weight: 400; letter-spacing: -.01em; }
 .serif em { font-style: italic; }
 .h-display { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 4.25rem); line-height: 1.1; letter-spacing: -.01em; }
-.h-section { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.15; letter-spacing: -.01em; color: #653524; }
+.h-section { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.15; letter-spacing: -.01em; color: #6b3a26; }
 .h-card { font-family: var(--app-font-serif); font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2rem); line-height: 1.2; }
 .subhead { font-family: var(--app-font-sans); font-weight: 400; font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.6; }
 .body-lg { font-family: var(--app-font-sans); font-weight: 300; font-size: clamp(1.05rem, 1.3vw, 1.125rem); line-height: 1.85; }
 .body-md { font-family: var(--app-font-sans); font-weight: 300; font-size: 1rem; line-height: 1.8; }
 .label { font-family: var(--app-font-sans); font-size: .78rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; }
-.eyebrow { font-family: var(--app-font-sans); font-size: .8rem; text-transform: uppercase; letter-spacing: .2em; font-weight: 400; line-height: 1.6; color: #9b7953; }
+.eyebrow { font-family: var(--app-font-sans); font-size: .8rem; text-transform: uppercase; letter-spacing: .2em; font-weight: 400; line-height: 1.6; color: #6b3a26; }
 .brand-gradient { background: linear-gradient(135deg, #f7c746 0%, #ecb538 100%); }
 .site-wrap { width: min(1240px, calc(100% - 64px)); margin: auto; }
-.nav-link { color: #653524; font-size: .82rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; transition: color .2s ease; }
-.nav-link:hover { color: #4b2419; }
+.nav-link { color: #6b3a26; font-size: .82rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; transition: color .2s ease; }
+.nav-link:hover { color: #6b3a26; }
 .cta { transition: transform .25s ease, filter .25s ease; }
 .cta:hover { transform: translateY(-2px); filter: brightness(.93); }
 .reveal { animation: rise-in .8s cubic-bezier(.2,.7,.2,1) both; }
