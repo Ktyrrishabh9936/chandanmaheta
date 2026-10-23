@@ -97,9 +97,7 @@ function Header() {
 function HeroEmblem() {
   return (
     <div className="hero-emblem-stage" aria-hidden="true">
-      <span className="hero-orbit hero-orbit-one" />
-      <span className="hero-orbit hero-orbit-two" />
-      <span className="hero-orbit hero-orbit-three" />
+      <span className="hero-orbit" />
       <div className="hero-medallion">
         <img className="hero-emblem" src="/icon-cm-wellbeing@2x.png" alt="" width="525" height="482" />
       </div>
@@ -109,23 +107,23 @@ function HeroEmblem() {
 
 function Hero() {
   return (
-    <section id="top" className="hero-brand relative overflow-hidden pt-[76px] text-white md:pt-[92px]">
-      <div className="hero-light hero-light-one" aria-hidden="true" />
-      <div className="hero-light hero-light-two" aria-hidden="true" />
-      <div className="site-wrap relative z-10 grid min-h-[650px] items-center gap-10 pb-16 pt-16 md:min-h-[700px] md:pb-20 md:pt-20 lg:grid-cols-[1.08fr_.92fr] lg:gap-8 xl:min-h-[730px]">
-        <div className="max-w-[720px]">
-          <h1 className="hero-title max-w-[700px] reveal reveal-delay">Anchored within, everything flourishes.</h1>
-          <p className="hero-life mt-6 reveal reveal-late">Health. Work. Relationships. Your full life.</p>
-          <p className="hero-emphasis mt-3 reveal reveal-late">Live at your best — without burning out.</p>
-          <p className="hero-descriptor mt-5 max-w-[600px] reveal reveal-late">Translating wellbeing from a philosophy into lived experience.</p>
-          <div className="mt-9 reveal reveal-late">
-            <a href="#work" className="hero-cta inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.9rem] font-semibold" data-testid="link-explore-work">Explore Ways to Work Together <ArrowRight size={17} /></a>
+    <>
+      <section id="top" className="hero-brand relative overflow-hidden pt-[76px] text-white md:pt-[92px]">
+        <div className="site-wrap relative z-10 grid min-h-[560px] items-center gap-8 py-14 md:min-h-[620px] md:py-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-12">
+          <div className="max-w-[650px]">
+            <h1 className="hero-title max-w-[620px] reveal reveal-delay">Anchored within, everything flourishes.</h1>
+            <p className="hero-life mt-5 reveal reveal-late">Health. Work. Relationships. Your full life.</p>
+            <p className="hero-emphasis mt-3 reveal reveal-late">Live at your best — without burning out.</p>
+            <p className="hero-descriptor mt-4 max-w-[560px] reveal reveal-late">Translating wellbeing from a philosophy into lived experience.</p>
+            <div className="mt-8 reveal reveal-late">
+              <a href="#work" className="hero-cta inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.9rem] font-semibold" data-testid="link-explore-work">Explore Ways to Work Together <ArrowRight size={17} /></a>
+            </div>
           </div>
+          <HeroEmblem />
         </div>
-        <HeroEmblem />
-      </div>
-      <div className="hero-credibility relative z-10">
-        <div className="site-wrap grid lg:grid-cols-3">
+      </section>
+      <section className="hero-credibility" aria-label="Experience and credentials">
+        <div className="credibility-grid grid lg:grid-cols-3">
           <div className="credibility-item">
             <p className="credibility-lead">Two decades in corporate India. Two decades as a wellbeing practitioner.</p>
             <p className="credibility-copy">Bringing the rigour of business and the depth of lived practice.</p>
@@ -137,8 +135,8 @@ function Hero() {
             <p className="credibility-lead">The only certified female TM teacher in Maharashtra.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
