@@ -154,7 +154,7 @@ strong, b { font-weight: 700; }
 }
 .hero-title { font-family: var(--app-font-serif); font-size: clamp(2.75rem, 4.4vw, 4.5rem); font-weight: 500; letter-spacing: -.02em; line-height: 1.05; text-wrap: balance; text-shadow: 0 3px 20px rgba(107, 58, 38, .16); }
 .hero-life { font-family: var(--app-font-serif); font-size: clamp(1.15rem, 1.5vw, 1.5rem); line-height: 1.4; letter-spacing: -.005em; color: #fff; }
-.hero-emphasis { font-family: var(--app-font-serif); font-size: clamp(1.05rem, 1.3vw, 1.25rem); font-style: normal; line-height: 1.45; color: #fff; }
+.hero-emphasis { font-family: var(--app-font-serif); font-size: clamp(1.15rem, 1.5vw, 1.5rem); font-style: normal; line-height: 1.4; letter-spacing: -.005em; color: #fff; }
 .hero-descriptor { font-size: clamp(.95rem, 1.1vw, 1.05rem); font-weight: 400; line-height: 1.65; color: rgba(255,255,255,.9); }
 .hero-cta { color: #844b00; background: #fffdf5; box-shadow: 0 12px 32px rgba(101, 55, 0, .22); transition: transform .25s ease, box-shadow .25s ease; }
 .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 36px rgba(101, 55, 0, .3); }
