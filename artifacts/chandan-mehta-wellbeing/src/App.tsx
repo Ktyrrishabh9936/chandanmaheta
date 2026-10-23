@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { ArrowDown, ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Menu, X } from 'lucide-react';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import NotFound from '@/pages/not-found';
 
@@ -63,69 +63,81 @@ const practices = [
   { title: 'Coaching & Guidance', association: 'Jack Canfield', tone: '#dce9ec' },
 ];
 
-function BrandMark() {
-  return (
-    <a href="#top" aria-label="Chandan Mehta Wellbeing home" className="flex items-center gap-3" data-testid="link-brand-home">
-      <span className="flex items-center gap-3 text-[#6b3a26]">
-        <img src="/chandan-logo-mark.png" alt="" className="h-10 w-10 shrink-0 object-contain" width="328" height="292" />
-        <span className="leading-tight">
-          <span className="serif block text-[1.23rem] tracking-[-.02em]">Chandan Mehta</span>
-          <span className="block text-[.54rem] font-semibold uppercase tracking-[.28em]">Wellbeing</span>
-        </span>
-      </span>
-    </a>
-  );
-}
-
 function Header() {
   const [open, setOpen] = useState(false);
   const nav = [
     ['Who I Work With', '#who'],
     ['Work Together', '#work'],
     ['My Approach', '#approach'],
-    ['TM', '#meditation'],
+    ['Transcendental Meditation', '#meditation'],
     ['About Me', '#about'],
   ];
   return (
-    <header className="brand-gradient fixed left-0 right-0 top-0 z-50 shadow-[0_1px_0_rgba(101,53,36,.14)] backdrop-blur-md">
-      <div className="site-wrap flex h-[76px] items-center justify-between gap-6 md:h-[92px]">
-        {/* <BrandMark /> */}
-        <img src="/chandan-logo-new.png" alt="Chandan Mehta Wellbeing" className="h-14 w-auto shrink-0 object-contain md:h-16" />
-        <nav aria-label="Main navigation" className="hidden items-center gap-6 2xl:gap-9 xl:flex">
-          {nav.map(([label, href]) => <a key={label} className="nav-link whitespace-nowrap !text-white font-bold hover:!text-[#6b3a26]" href={href}>{label}</a>)}
-          <a href="#contact" className="shrink-0 whitespace-nowrap rounded-full border border-white bg-transparent px-5 py-3 text-[.82rem] font-normal tracking-[.08em] text-white transition-colors hover:border-white hover:bg-white hover:text-[#6b3a26]" data-testid="link-contact-nav">Get in Touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
+    <header className="masthead fixed left-0 right-0 top-0 z-50">
+      <div className="masthead-wrap flex h-[76px] items-center justify-between gap-5 md:h-[92px]">
+        <a href="#top" aria-label="Chandan Mehta Wellbeing home" data-testid="link-brand-home" className="shrink-0">
+          <img src="/chandan-logo-horizontal.png" alt="Chandan Mehta Wellbeing" className="h-[46px] w-auto object-contain md:h-[54px]" width="614" height="143" />
+        </a>
+        <nav aria-label="Main navigation" className="hidden items-center gap-4 min-[1360px]:flex min-[1500px]:gap-6">
+          {nav.map(([label, href]) => <a key={label} className="masthead-link whitespace-nowrap" href={href}>{label}</a>)}
+          <a href="#contact" className="masthead-cta shrink-0 whitespace-nowrap rounded-full px-5 py-3 text-[.78rem] font-semibold uppercase tracking-[.1em]" data-testid="link-contact-nav">Get in Touch <ArrowUpRight className="ml-1 inline h-4 w-4" /></a>
         </nav>
-        <button className="rounded-full border border-white/50 p-2 text-white xl:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
+        <button className="rounded-full border border-white/60 p-2.5 text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white min-[1360px]:hidden" type="button" aria-label={open ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} data-testid="button-mobile-menu">
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
-      {open && <nav aria-label="Mobile navigation" className="site-wrap mt-2 flex flex-col gap-4 bg-transparent px-5 pb-6 pt-3 xl:hidden">
-        {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="nav-link py-1 !text-white hover:!text-[#6b3a26]">{label}</a>)}
-        <a href="#contact" onClick={() => setOpen(false)} className="rounded-full border border-white bg-transparent px-5 py-3 text-center text-[.95rem] font-normal text-white transition-colors hover:bg-white hover:text-[#6b3a26]">Get in Touch</a>
+      {open && <nav id="mobile-navigation" aria-label="Mobile navigation" className="masthead-wrap flex flex-col gap-3 border-t border-white/20 pb-6 pt-4 min-[1360px]:hidden">
+        {nav.map(([label, href]) => <a key={label} href={href} onClick={() => setOpen(false)} className="masthead-link rounded-lg px-2 py-2 text-[.82rem]">{label}</a>)}
+        <a href="#contact" onClick={() => setOpen(false)} className="masthead-cta mt-1 rounded-full px-5 py-3 text-center text-[.85rem] font-semibold uppercase tracking-[.1em]">Get in Touch</a>
       </nav>}
     </header>
   );
 }
 
+function HeroEmblem() {
+  return (
+    <div className="hero-emblem-stage" aria-hidden="true">
+      <span className="hero-orbit hero-orbit-one" />
+      <span className="hero-orbit hero-orbit-two" />
+      <span className="hero-orbit hero-orbit-three" />
+      <div className="hero-medallion">
+        <img className="hero-emblem" src="/icon-cm-wellbeing@2x.png" alt="" width="525" height="482" />
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
-    <section id="top" className="relative flex min-h-[740px] items-center overflow-hidden bg-[#ede4d1] py-32 md:min-h-[790px] md:py-36">
-      <img src="/hero.webp" alt="A quiet garden path, warmed by early morning light" className="absolute inset-0 h-full w-full object-cover object-center" width="1800" height="1200" fetchPriority="high" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f8f6ef]/95 via-[#f8f6ef]/75 to-[#f8f6ef]/5 max-md:via-[#f8f6ef]/85 max-md:to-[#f8f6ef]/55" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#4b3425]/10 to-transparent" />
-      <div className="site-wrap relative z-10 my-auto">
-        <div className="max-w-[700px] mt-[25px]">
-          <p className="eyebrow mb-7 reveal">Wellbeing, rooted in real life</p>
-          <h1 className="h-display max-w-[640px] font-bold text-[#6b3a26] reveal reveal-delay">Your anchor for a steadier, fuller life.</h1>
-          <p className="subhead mt-7 max-w-[540px] text-[#6b3a26] reveal reveal-late">Two decades in corporate India. The only certified female Transcendental Meditation teacher in Maharashtra.</p>
-          <div className="mt-9 flex flex-wrap items-center gap-5 reveal reveal-late">
-            <a href="#work" className="cta brand-gradient inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.95rem] font-normal text-white" data-testid="link-explore-work">Explore working together <ArrowRight size={17} /></a>
-            <a href="#who" className="inline-flex items-center gap-2 text-[.95rem] text-[#6b3a26]">Find your starting point <ArrowDown size={15} /></a>
+    <section id="top" className="hero-brand relative overflow-hidden pt-[76px] text-white md:pt-[92px]">
+      <div className="hero-light hero-light-one" aria-hidden="true" />
+      <div className="hero-light hero-light-two" aria-hidden="true" />
+      <div className="site-wrap relative z-10 grid min-h-[650px] items-center gap-10 pb-16 pt-16 md:min-h-[700px] md:pb-20 md:pt-20 lg:grid-cols-[1.08fr_.92fr] lg:gap-8 xl:min-h-[730px]">
+        <div className="max-w-[720px]">
+          <h1 className="hero-title max-w-[700px] reveal reveal-delay">Anchored within, everything flourishes.</h1>
+          <p className="hero-life mt-6 reveal reveal-late">Health. Work. Relationships. Your full life.</p>
+          <p className="hero-emphasis mt-3 reveal reveal-late">Live at your best — without burning out.</p>
+          <p className="hero-descriptor mt-5 max-w-[600px] reveal reveal-late">Translating wellbeing from a philosophy into lived experience.</p>
+          <div className="mt-9 reveal reveal-late">
+            <a href="#work" className="hero-cta inline-flex items-center gap-3 rounded-full px-6 py-4 text-[.9rem] font-semibold" data-testid="link-explore-work">Explore Ways to Work Together <ArrowRight size={17} /></a>
           </div>
         </div>
-        
+        <HeroEmblem />
       </div>
-      <div className="absolute bottom-0 right-[8%] hidden h-32 w-px bg-[#fffefa]/80 md:block" />
+      <div className="hero-credibility relative z-10">
+        <div className="site-wrap grid lg:grid-cols-3">
+          <div className="credibility-item">
+            <p className="credibility-lead">Two decades in corporate India. Two decades as a wellbeing practitioner.</p>
+            <p className="credibility-copy">Bringing the rigour of business and the depth of lived practice.</p>
+          </div>
+          <div className="credibility-item">
+            <p className="credibility-copy">Yoga as a Way of Life. Pranayama. Transcendental Meditation (TM) · Nutrition &amp; Lifestyle · Coaching &amp; Guidance.</p>
+          </div>
+          <div className="credibility-item">
+            <p className="credibility-lead">The only certified female TM teacher in Maharashtra.</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
